@@ -1,0 +1,173 @@
+
+.site-header {
+  background: #fff5f3;
+  border-bottom: 1px solid #f4dfe3;
+}
+
+.header-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: #c72f64;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.site-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: #e83f78;
+}
+
+.header-button {
+  background: #e83f78;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .site-nav {
+    gap: 12px 20px;
+  }
+}
+
+/* Logo e nome do clube */
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Logo circular do cabeçalho */
+.header-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Ajuste para tablets */
+@media (max-width: 1024px) {
+  .header-logo {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+  .header-logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+ 
+/* ==================================
+   HEADER - ESTILO DELICADO
+================================== */
+
+.site-header {
+  background-color: #fffcfa;
+  border-bottom: 1px solid #f3e4e7;
+  box-shadow: 0 4px 20px rgba(120, 65, 85, 0.04);
+}
+
+/* Logo oficial */
+.header-logo {
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(232, 63, 120, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Nome do clube */
+.site-brand {
+  color: #c72f64;
+}
+
+/* Links do menu */
+.site-nav a {
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: #e83f78;
+}
+
+/* Botão rosa */
+.header-button {
+  background-color: #e83f78;
+  box-shadow: 0 5px 14px rgba(232, 63, 120, 0.12);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header-button:hover {
+  background-color: #c72f64;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(232, 63, 120, 0.18);
+}
+
+
+/* Nome do clube no Header */
+.site-brand,
+.site-brand span {
+  color: #282424;
+}
+
+.site-brand:hover,
+.site-brand:hover span {
+  color: #54464a;
+}
+
+/* Livrinho delicado ao lado do nome */
+.site-brand {
+  gap: 9px;
+}
+
+.brand-book {
+  width: 20px;
+  height: 20px;
+  color: #c72f64;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.site-brand:hover .brand-book {
+  transform: rotate(-8deg);
+}
