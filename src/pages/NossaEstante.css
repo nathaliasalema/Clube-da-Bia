@@ -1,0 +1,483 @@
+
+.nossa-estante {
+  min-height: 100vh;
+  padding: 65px 24px 90px;
+}
+
+.estante-introducao {
+  max-width: 800px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.estante-etiqueta {
+  color: #c72f64;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.estante-introducao h1 {
+  margin: 16px 0;
+  color: #e83f78;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.estante-introducao p {
+  color: #66525e;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.estante-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.estante-filtros button {
+  padding: 11px 22px;
+  border: 1px solid #f1bfd0;
+  border-radius: 30px;
+  background: white;
+  color: #b34b73;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.estante-filtros button:hover,
+.estante-filtros button.ativo {
+  background: #e83f78;
+  color: white;
+  border-color: #e83f78;
+}
+
+.estante-contagem {
+  margin-bottom: 30px;
+  color: #a76c83;
+  text-align: center;
+}
+
+.estante-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.livro-card {
+  overflow: hidden;
+  border: 1px solid #f5dce5;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(232, 63, 120, 0.07);
+  transition: transform 0.25s ease;
+}
+
+.livro-card:hover {
+  transform: translateY(-5px);
+}
+
+.livro-capa {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 290px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fce7ef, #f6c9d9);
+}
+
+.livro-capa img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.livro-capa-placeholder {
+  color: #b45d7e;
+  font-size: 72px;
+}
+
+.livro-informacoes {
+  padding: 20px;
+}
+
+.livro-mes {
+  color: #c36b8b;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.livro-informacoes h2 {
+  margin: 10px 0 8px;
+  color: #4d3540;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.livro-autor {
+  margin-bottom: 14px;
+  color: #806b75;
+  font-size: 14px;
+}
+
+.livro-avaliacao {
+  color: #e83f78;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.livro-avaliacao span {
+  color: #e7cbd5;
+}
+
+.livro-sem-nota {
+  color: #a77e90;
+  font-size: 13px;
+}
+
+.estante-mensagem {
+  padding: 35px 15px;
+  color: #806b75;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .nossa-estante {
+    padding: 45px 18px;
+  }
+
+  .estante-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .livro-capa {
+    height: 210px;
+  }
+
+  .livro-informacoes {
+    padding: 14px;
+  }
+
+  .livro-informacoes h2 {
+    font-size: 16px;
+  }
+
+  .livro-avaliacao {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .estante-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .livro-card,
+  .estante-filtros button {
+    transition: none;
+  }
+}
+
+/* ========================================
+   NOSSA ESTANTE — REFINAMENTO VISUAL
+======================================== */
+
+/* Fundo delicado da página */
+.nossa-estante {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 219, 231, 0.45),
+      transparent 420px
+    ),
+    #fffbfa;
+}
+
+/* Título mais elegante */
+.estante-introducao {
+  margin-bottom: 50px;
+}
+
+.estante-introducao h1 {
+  letter-spacing: -1.5px;
+}
+
+.estante-introducao p {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Filtros com aparência mais suave */
+.estante-filtros {
+  gap: 10px;
+}
+
+.estante-filtros button {
+  min-width: 76px;
+  background: #fffdfd;
+  box-shadow: 0 3px 10px rgba(232, 63, 120, 0.04);
+}
+
+.estante-filtros button.ativo {
+  box-shadow: 0 5px 15px rgba(232, 63, 120, 0.18);
+}
+
+/* Grade mais equilibrada */
+.estante-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px 24px;
+}
+
+/* Cards mais elegantes */
+.livro-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 1px solid #f4dce4;
+  background: #ffffff;
+  box-shadow:
+    0 6px 20px rgba(120, 65, 85, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.livro-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 35px rgba(120, 65, 85, 0.11);
+}
+
+/* Área da capa */
+.livro-capa {
+  height: 300px;
+  padding: 22px;
+  background: linear-gradient(
+    145deg,
+    #fff0f5,
+    #f9dce6
+  );
+}
+
+/* Capa com efeito de livro físico */
+.livro-capa img {
+  position: relative;
+  inset: auto;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 3px 7px 7px 3px;
+  box-shadow:
+    -5px 6px 15px rgba(66, 39, 51, 0.18),
+    0 2px 5px rgba(66, 39, 51, 0.08);
+}
+
+/* Livrinho provisório */
+.livro-capa-placeholder {
+  font-size: 64px;
+  opacity: 0.7;
+}
+
+/* Informações mais compactas */
+.livro-informacoes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 19px 22px;
+}
+
+.livro-mes {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+}
+
+.livro-informacoes h2 {
+  margin: 11px 0 7px;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.livro-autor {
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+/* Mantém as avaliações alinhadas */
+.livro-avaliacao,
+.livro-sem-nota {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.livro-avaliacao {
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .estante-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+  .estante-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .livro-capa {
+    height: 220px;
+    padding: 15px;
+  }
+
+  .livro-informacoes {
+    padding: 15px;
+  }
+
+  .livro-informacoes h2 {
+    font-size: 16px;
+  }
+
+  .livro-avaliacao {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .estante-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .livro-capa {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .livro-card {
+    transition: none;
+  }
+}
+
+/* Centralização das capas dos livros */
+
+.livro-capa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.livro-capa img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* ========================================
+   NOSSA ESTANTE — LAYOUT MAIS COMPACTO
+======================================== */
+
+.nossa-estante {
+  padding-top: 35px;
+  padding-bottom: 70px;
+}
+
+.estante-introducao {
+  margin-bottom: 25px;
+}
+
+.estante-introducao h1 {
+  margin: 0 0 8px;
+  font-size: clamp(32px, 4vw, 46px);
+}
+
+.estante-introducao p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.estante-filtros {
+  margin-bottom: 12px;
+}
+
+.estante-contagem {
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+/* Ajustes dos cards */
+.estante-grid {
+  gap: 22px;
+}
+
+.livro-capa {
+  height: 270px;
+  padding: 18px;
+}
+
+.livro-informacoes {
+  padding: 16px 17px 18px;
+}
+
+.livro-informacoes h2 {
+  font-size: 17px;
+  margin: 8px 0 5px;
+}
+
+.livro-autor {
+  margin-bottom: 12px;
+}
+
+.livro-avaliacao {
+  font-size: 19px;
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+  .nossa-estante {
+    padding-top: 25px;
+  }
+
+  .estante-introducao {
+    margin-bottom: 20px;
+  }
+
+  .livro-capa {
+    height: 205px;
+    padding: 12px;
+  }
+
+  .livro-informacoes {
+    padding: 13px;
+  }
+
+  .livro-informacoes h2 {
+    font-size: 15px;
+  }
+}
