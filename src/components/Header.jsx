@@ -1,13 +1,25 @@
 
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
+  const [menuAberto, setMenuAberto] = useState(false)
+
+  function fecharMenu() {
+    setMenuAberto(false)
+  }
+
   return (
     <header className="site-header">
       <div className="header-container">
 
-        <Link to="/" className="site-brand">
+        {/* Nome do clube */}
+        <Link
+          to="/"
+          className="site-brand"
+          onClick={fecharMenu}
+        >
           <span>Clube da Bia</span>
 
           <svg
@@ -28,27 +40,71 @@ function Header() {
           </svg>
         </Link>
 
+        {/* Botão do menu para celular */}
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={menuAberto}
+          aria-controls="menu-principal"
+          onClick={() => setMenuAberto(!menuAberto)}
+        >
+          <span className="menu-icon">
+            {menuAberto ? '✕' : '☰'}
+          </span>
+        </button>
+
+        {/* Links de navegação */}
         <nav
-          className="site-nav"
+          id="menu-principal"
+          className={`site-nav ${menuAberto ? 'site-nav-open' : ''}`}
           aria-label="Menu principal"
         >
-          <Link to="/">Início</Link>
-          <Link to="/nossa-estante">Nossa Estante</Link>
+          <Link to="/" onClick={fecharMenu}>
+            Início
+          </Link>
 
-          <Link to="/#estatisticas">Clube em Números</Link>
-          <Link to="/#premios">Prêmios</Link>
-          <Link to="/#sobre">Sobre</Link>
-          <Link to="/#sugestoes">Indique um Livro</Link>
+          <Link to="/nossa-estante" onClick={fecharMenu}>
+            Nossa Estante
+          </Link>
+
+          <Link to="/sobre" onClick={fecharMenu}>
+            Sobre
+          </Link>
+
+          <Link to="/#estatisticas" onClick={fecharMenu}>
+            Clube em Números
+          </Link>
+
+          <Link to="/#premios" onClick={fecharMenu}>
+            Prêmios
+          </Link>
+
+          <Link to="/#sugestoes" onClick={fecharMenu}>
+            Indique um Livro
+          </Link>
+
+          {/* Botão dentro do menu no celular */}
+          <a
+            href="https://t.me/+-ieghNrVNIEyOWQx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-button mobile-button"
+            onClick={fecharMenu}
+          >
+            Entrar no Clube
+          </a>
         </nav>
 
+        {/* Botão visível no computador */}
         <a
-  href="https://t.me/+-ieghNrVNIEyOWQx"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="header-button"
->
-  Entrar no Clube
-</a>
+          href="https://t.me/+-ieghNrVNIEyOWQx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-button desktop-button"
+        >
+          Entrar no Clube
+        </a>
 
       </div>
     </header>

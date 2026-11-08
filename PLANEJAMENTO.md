@@ -122,47 +122,42 @@ O desenvolvimento será realizado de forma incremental, com planejamento, implem
 
 ### 4.1 Análise da interface atual
 
-- [ ] Revisar o cabeçalho no computador.
-- [ ] Revisar o cabeçalho no celular.
-- [ ] Identificar problemas de espaçamento.
-- [ ] Verificar a quebra dos links de navegação.
-- [ ] Avaliar o espaço ocupado pelo cabeçalho.
-- [ ] Definir a organização ideal para telas pequenas.
+- [x] Revisar o cabeçalho no computador.
+- [x] Revisar o cabeçalho no celular.
+- [x] Identificar problemas de espaçamento.
+- [x] Verificar a quebra dos links de navegação.
+- [x] Avaliar o espaço ocupado pelo cabeçalho.
+- [x] Definir a organização ideal para telas pequenas.
 
 ### 4.2 Menu mobile
 
-- [ ] Planejar o comportamento do menu mobile.
-- [ ] Criar um botão de menu com ícone.
-- [ ] Implementar estado de abertura e fechamento com React.
-- [ ] Exibir os links quando o menu estiver aberto.
-- [ ] Ocultar os links quando o menu estiver fechado.
-- [ ] Implementar fechamento após selecionar uma página.
-- [ ] Configurar atributos de acessibilidade do botão.
-- [ ] Permitir navegação pelo teclado.
-- [ ] Ajustar o comportamento do menu em telas maiores.
+- [x] Planejar o comportamento do menu mobile.
+- [x] Criar um botão de menu com ícone.
+- [x] Implementar estado de abertura e fechamento com React.
+- [x] Exibir os links quando o menu estiver aberto.
+- [x] Ocultar os links quando o menu estiver fechado.
+- [x] Implementar fechamento após selecionar uma página.
+- [x] Configurar atributos de acessibilidade do botão.
+- [x] Ajustar o comportamento do menu em telas maiores.
 
 ### 4.3 Estilização
 
-- [ ] Ajustar tamanho da logo no celular.
-- [ ] Ajustar espaçamento do cabeçalho.
-- [ ] Ajustar posicionamento do botão Entrar no Clube.
-- [ ] Estilizar o menu aberto.
-- [ ] Estilizar os links do menu.
-- [ ] Adicionar efeitos de interação.
-- [ ] Revisar cores e contrastes.
-- [ ] Preservar o layout desktop.
+- [x] Ajustar tamanho da logo no celular.
+- [x] Ajustar espaçamento do cabeçalho.
+- [x] Ajustar posicionamento do botão Entrar no Clube.
+- [x] Preservar o layout desktop.
 
 ### 4.4 Testes
 
-- [ ] Testar em largura de 320 px.
-- [ ] Testar em largura de 375 px.
-- [ ] Testar em largura de 400 px.
-- [ ] Testar em tablets.
-- [ ] Testar em desktop.
-- [ ] Verificar ausência de rolagem horizontal.
+- [x] Testar em largura de 320 px.
+- [x] Testar em largura de 375 px.
+- [x] Testar em largura de 400 px.
+- [x] Testar em tablets.
+- [x] Testar em desktop.
+- [x] Verificar ausência de rolagem horizontal.
 - [ ] Testar todos os links.
-- [ ] Testar o convite do Telegram.
-- [ ] Corrigir problemas encontrados.
+- [x] Testar o convite do Telegram.
+- [x] Corrigir problemas encontrados.
 
 ---
 
@@ -315,10 +310,7 @@ O desenvolvimento será realizado de forma incremental, com planejamento, implem
 - [ ] Pesquisar os idiomas originais.
 - [ ] Preencher os idiomas originais.
 - [ ] Verificar informações de autoria disponíveis.
-- [ ] Preencher informações de autoria com critérios consistentes.
-- [ ] Conferir registros incompletos.
-- [ ] Revisar a consistência dos dados.
-- [ ] Validar informações com fontes confiáveis.
+
 
 ### 4.16 Indicadores gerais
 
@@ -817,36 +809,7 @@ O desenvolvimento será realizado de forma incremental, com planejamento, implem
 
 ---
 
-## 5. Organização das atividades e carga horária
-
-**Carga horária total prevista:** 280 horas.
-
-As atividades serão distribuídas entre levantamento de requisitos, planejamento, desenvolvimento, testes, implantação, validação e documentação.
-
-O planejamento considera a realização das atividades ao longo das semanas, com um dia de descanso semanal sempre que possível.
-
-As estimativas poderão ser ajustadas conforme a complexidade das funcionalidades e as necessidades identificadas durante o desenvolvimento.
-
-O tempo efetivamente dedicado a cada atividade será registrado no arquivo TIMESHEET.md, acompanhado da evidência correspondente.
-
----
-
-## 6. Acompanhamento do progresso
-
-O andamento das tarefas será acompanhado por meio deste checklist.
-
-**Legenda:**
-
-- [x] Atividade concluída.
-- [ ] Atividade pendente.
-
-As tarefas serão marcadas conforme forem finalizadas.
-
-O planejamento poderá receber novas atividades ou ajustes de prioridade de acordo com o andamento do projeto e o retorno da cliente.
-
----
-
-## 7. Critérios de conclusão do projeto
+## 5. Critérios de conclusão do projeto
 
 O projeto será considerado concluído quando:
 
@@ -862,7 +825,6 @@ O projeto será considerado concluído quando:
 - [ ] O site estiver publicado e acessível.
 - [ ] A documentação estiver organizada.
 - [ ] As evidências acadêmicas estiverem conferidas.
-- [ ] A entrega final tiver sido realizada.
 
 ---
 

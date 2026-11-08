@@ -1,0 +1,482 @@
+
+/* =====================================
+   PÁGINA SOBRE — CLUBE DA BIA
+===================================== */
+
+.sobre-page {
+  min-height: 100vh;
+  padding: 50px 24px 90px;
+  background: #fffbfa;
+  color: #66525e;
+}
+
+.sobre-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =====================================
+   INTRODUÇÃO
+===================================== */
+
+.sobre-intro {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.sobre-etiqueta {
+  color: #c72f64;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sobre-intro h1 {
+  margin: 14px 0;
+  color: #40343a;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.sobre-subtitulo {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #66525e;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =====================================
+   CARD — COMO TUDO COMEÇOU
+===================================== */
+
+.sobre-historia {
+  max-width: 1000px;
+  margin: 0 auto 75px;
+  padding: 42px 48px;
+
+  border: 1px solid #ede3e1;
+  border-radius: 22px;
+  background: #fffcfb;
+
+  box-shadow: 0 8px 28px rgba(70, 45, 55, 0.035);
+}
+
+.sobre-historia-topo {
+  margin-bottom: 18px;
+}
+
+.sobre-historia-selo {
+  display: inline-block;
+  padding: 7px 13px;
+
+  border-radius: 20px;
+  background: #f6f0ec;
+  color: #826a65;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sobre-historia h2 {
+  margin: 0 0 22px;
+  color: #40343a;
+  font-size: clamp(27px, 3vw, 34px);
+}
+
+.sobre-historia p {
+  max-width: 850px;
+  margin: 0 0 18px;
+  color: #66525e;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.sobre-historia p:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================
+   COMO FUNCIONA
+===================================== */
+
+.sobre-secao {
+  margin-bottom: 75px;
+}
+
+.sobre-secao h2 {
+  margin: 0 0 28px;
+  color: #40343a;
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.sobre-passos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.sobre-passo {
+  padding: 32px 24px;
+  border: 1px solid #f1e2e6;
+  border-radius: 18px;
+  background: #ffffff;
+  text-align: center;
+
+  box-shadow: 0 6px 20px rgba(120, 65, 85, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.sobre-passo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(120, 65, 85, 0.09);
+}
+
+.sobre-passo-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+}
+
+.sobre-passo:nth-child(1) .sobre-passo-icone {
+  background: #fff0f5;
+  color: #e83f78;
+}
+
+.sobre-passo:nth-child(2) .sobre-passo-icone {
+  background: #eef5ef;
+  color: #789b86;
+}
+
+.sobre-passo:nth-child(3) .sobre-passo-icone {
+  background: #fff6e8;
+  color: #c18e4e;
+}
+
+.sobre-passo-icone svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.8;
+}
+
+.sobre-passo h3 {
+  margin: 0 0 14px;
+  color: #40343a;
+  font-size: 18px;
+}
+
+.sobre-passo p {
+  margin: 0;
+  color: #66525e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   QUER FAZER PARTE?
+===================================== */
+
+.sobre-participar {
+  margin: 75px 0 90px;
+  padding: 48px 25px;
+
+  border: 1px solid #f4dce4;
+  border-radius: 22px;
+  background: #fff5f7;
+  text-align: center;
+}
+
+.sobre-participar h2 {
+  margin: 0 0 16px;
+  color: #40343a;
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.sobre-participar p {
+  max-width: 570px;
+  margin: 0 auto 28px;
+  color: #66525e;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.sobre-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  border-radius: 30px;
+
+  background: #e83f78;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 6px 18px rgba(232, 63, 120, 0.15);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sobre-botao:hover {
+  background: #c72f64;
+  transform: translateY(-2px);
+}
+
+/* =====================================
+   CONHEÇA A BIA
+===================================== */
+
+.sobre-bia {
+  text-align: center;
+}
+
+.sobre-bia h2 {
+  margin: 0 0 22px;
+  color: #40343a;
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.sobre-bia-descricao {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #66525e;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   VÍDEOS
+===================================== */
+
+.sobre-bia-videos {
+  margin-top: 65px;
+}
+
+.sobre-bia h3 {
+  margin: 0 0 28px;
+  color: #40343a;
+  font-size: 23px;
+}
+
+.sobre-videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.sobre-video-card {
+  overflow: hidden;
+  padding: 8px;
+
+  border: 1px solid #f1e2e6;
+  border-radius: 18px;
+  background: #ffffff;
+
+  box-shadow: 0 6px 20px rgba(120, 65, 85, 0.06);
+}
+
+.sobre-video {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: #f5dce5;
+}
+
+.sobre-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =====================================
+   REDES SOCIAIS
+===================================== */
+
+.sobre-bia-redes {
+  margin-top: 70px;
+}
+
+.sobre-redes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.sobre-rede {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 13px 20px;
+  border: 1px solid #ead5de;
+  border-radius: 30px;
+
+  background: #ffffff;
+  color: #40343a;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sobre-rede:hover {
+  background: #e83f78;
+  border-color: #e83f78;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.sobre-rede-icone {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+.sobre-botao:focus-visible,
+.sobre-rede:focus-visible {
+  outline: 3px solid #c72f64;
+  outline-offset: 4px;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+  .sobre-passos {
+    gap: 15px;
+  }
+
+  .sobre-passo {
+    padding: 25px 18px;
+  }
+
+  .sobre-historia {
+    padding: 35px;
+  }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 700px) {
+  .sobre-page {
+    padding: 35px 18px 65px;
+  }
+
+  .sobre-intro {
+    margin-bottom: 45px;
+  }
+
+  .sobre-historia {
+    margin-bottom: 55px;
+    padding: 28px 22px;
+  }
+
+  .sobre-secao {
+    margin-bottom: 50px;
+  }
+
+  .sobre-passos {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sobre-participar {
+    margin: 50px 0 60px;
+    padding: 35px 20px;
+  }
+
+  .sobre-bia-videos {
+    margin-top: 45px;
+  }
+
+  .sobre-videos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sobre-bia-redes {
+    margin-top: 50px;
+  }
+
+  .sobre-bia h3 {
+    font-size: 21px;
+  }
+}
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 480px) {
+  .sobre-intro h1 {
+    font-size: 32px;
+  }
+
+  .sobre-secao h2,
+  .sobre-participar h2,
+  .sobre-bia h2 {
+    font-size: 26px;
+  }
+
+  .sobre-redes {
+    gap: 10px;
+  }
+
+  .sobre-rede {
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+}
+
+/* =====================================
+   REDUÇÃO DE MOVIMENTO
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sobre-passo,
+  .sobre-botao,
+  .sobre-rede {
+    transition: none;
+  }
+
+  .sobre-passo:hover,
+  .sobre-botao:hover,
+  .sobre-rede:hover {
+    transform: none;
+  }
+}

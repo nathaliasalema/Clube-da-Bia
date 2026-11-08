@@ -4,22 +4,26 @@
 **Aluno:** Nathália Salema Quintanilha  
 **Projeto:** Clube do Livro da Bia
 
-> Registre à medida que trabalha, não no final.  
-> Cada linha precisa de uma evidência correspondente no índice do relatório.
+> Registre as atividades conforme forem realizadas.
+> Cada atividade deve ter uma evidência correspondente no índice.
 
 ## Registro de atividades
 
 | Etapa | Data Início | Data Fim | Horas | Atividade realizada | Encontro c/ cliente? | Evidências (link) | Responsável | Comentários |
 |---|---|---|---:|---|:---:|---|---|---|
-| Requisitos | 08/10/2026 | 08/10/2026 | 2 | Encontro com Beatriz Costa e participantes do Clube do Livro da Bia para conversar sobre o desenvolvimento do site, as necessidades da comunidade e as informações que serão disponibilizadas na plataforma. | S | [Evidência 03 — Encontro com a comunidade](evidencias/encontro-clube-08-10.png) | Nathália Salema Quintanilha | Encontro de 2 horas para alinhamento do projeto com a cliente e os participantes. |
-| Planejamento/design | 27/10/2026 | 27/10/2026 | 1 | Planejamento da identidade visual da aplicação, incluindo definição da paleta de cores, tipografia, organização da página inicial e escolha dos elementos gráficos. | N | [Evidência 01 — Interface inicial](evidencias/home-clube-bia.png) | Nathália Salema Quintanilha | Planejamento da apresentação visual do site e da experiência dos usuários. |
-| Desenvolvimento | 27/10/2026 | 27/10/2026 | 5 | Desenvolvimento e estilização da página inicial e do cabeçalho utilizando React e CSS. Integração da logo do clube, implementação de elementos decorativos, atualização dos textos de apresentação e ajustes na organização visual da interface. | N | [Evidência 01 — Interface inicial](evidencias/home-clube-bia.png) / [Evidência 02 — Commit no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/184c749f90cef6ecaab97df978aef04a41996c7c) | Nathália Salema Quintanilha | Desenvolvimento com React, Vite e CSS, verificações visuais no navegador e versionamento do código com Git. |
-| Desenvolvimento | 28/10/2026 | 28/10/2026 | 5 | Levantamento e organização do histórico de livros do clube, estudo de alternativas para atualização dos registros e criação de uma planilha com informações sobre as leituras realizadas. | N | [Evidência 04 — Planilha de livros](evidencias/planilha.png) | Nathália Salema Quintanilha | Organização de 34 registros de leitura de 2023 a 2025 e preparação dos dados para a futura página Nossa Estante. |
-| Planejamento/design | 06/11/2026 | 06/11/2026 | 2 | Estudo e revisão dos fundamentos do React por meio da documentação oficial, abordando componentes, props, compartilhamento de dados entre componentes e organização da interface, como preparação para o desenvolvimento da página Nossa Estante. | N | [Evidência 05 — Estudo de React](evidencias/estudo-react-06-11.png) | Nathália Salema Quintanilha | Revisão dos conceitos necessários para a implementação de novos componentes e funcionalidades. |
-| Desenvolvimento | 06/11/2026 | 06/11/2026 | 8 | Desenvolvimento da página Nossa Estante utilizando React, JavaScript e CSS. Configuração do React Router para navegação entre páginas e reorganização da estrutura da aplicação. Criação de componentes reutilizáveis para exibição dos livros, implementação de filtros por ano e avaliações em corações. Atualização individual dos registros de leitura no Google Sheets, incluindo pesquisa e inserção dos links das capas dos livros, organização das informações e criação da aba Dados do site. Publicação dos dados em formato CSV e integração com a aplicação utilizando Fetch API e Papa Parse. Implementação do controle de exibição pelo status de publicação, tratamento de avaliações pendentes, estilização dos cards, ajustes de layout, responsividade, testes e correções. | N | [Evidência 06 — Desenvolvimento da Nossa Estante] | Nathália Salema Quintanilha | Implementação de uma estante dinâmica, permitindo que a cliente atualize os livros diretamente pela planilha, sem necessidade de modificar o código da aplicação. |
-| Planejamento/design | 06/11/2026 | 06/11/2026 | 1 | Elaboração do planejamento das próximas etapas do projeto, com definição de prioridades, organização do cronograma de desenvolvimento e detalhamento das funcionalidades previstas. Criação do arquivo PLANEJAMENTO.md, incluindo tarefas relacionadas à responsividade, página Sobre, leitura atual, dashboard Clube em Números, formulário de indicação de livros e temas, premiações LOTY, votação e avaliações de 2026, testes, publicação e documentação. | N | [Evidência 07 — Planejamento das próximas etapas](PLANEJAMENTO.md) | Nathália Salema Quintanilha | Organização das atividades em checklist para acompanhamento do progresso e apresentação do planejamento ao professor. A atividade concluiu a jornada dedicada ao projeto em 06/11/2026, totalizando 11 horas distribuídas entre estudo dos fundamentos do React (2h), desenvolvimento da página Nossa Estante (8h) e planejamento das próximas etapas (1h). |
+| Requisitos | 08/10/2026 | 08/10/2026 | 2 | Encontro com Beatriz Costa e participantes do clube para levantamento das necessidades do site. | S | [Evidência 03 — Encontro com a comunidade](evidencias/encontro-clube-08-10.png) | Nathália Salema Quintanilha | Alinhamento dos objetivos do projeto com a cliente e a comunidade. |
+| Planejamento/design | 27/10/2026 | 27/10/2026 | 1 | Definição da identidade visual, paleta de cores, tipografia e organização da página inicial. | N | [Evidência 01 — Interface inicial](evidencias/home-clube-bia.png) | Nathália Salema Quintanilha | Planejamento visual da aplicação. |
+| Desenvolvimento | 27/10/2026 | 27/10/2026 | 5 | Desenvolvimento da página inicial e do cabeçalho com React, Vite e CSS, incluindo logo, textos e elementos visuais. | N | [Evidência 02 — Commit no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/184c749f90cef6ecaab97df978aef04a41996c7c) | Nathália Salema Quintanilha | Implementação da interface inicial e verificação visual no navegador. |
+| Desenvolvimento | 28/10/2026 | 28/10/2026 | 5 | Levantamento do histórico de leituras e criação de uma planilha com os dados dos livros do clube. | N | [Evidência 04 — Planilha de livros](evidencias/planilha.png) | Nathália Salema Quintanilha | Organização inicial de 34 livros de 2023 a 2025. |
+| Planejamento/design | 06/11/2026 | 06/11/2026 | 2 | Estudo da documentação oficial do React sobre componentes, props e organização da interface. | N | [Evidência 05 — Estudo de React](evidencias/estudo-react-06-11.png) | Nathália Salema Quintanilha | Preparação para o desenvolvimento da página Nossa Estante. |
+| Desenvolvimento | 06/11/2026 | 06/11/2026 | 8 | Criação da página Nossa Estante, configuração do React Router, componentes de livros, filtros por ano e integração com Google Sheets via CSV e Papa Parse. | N | [Evidência 06 — Desenvolvimento da Nossa Estante](https://github.com/nathaliasalema/Clube-da-Bia/commit/0fe07ba50f01ef551d03344210c611e64bb02a89) | Nathália Salema Quintanilha | Atualização dos registros e capas, estilização, ajustes de responsividade e verificações de funcionamento. |
+| Planejamento/design | 06/11/2026 | 06/11/2026 | 1 | Elaboração do PLANEJAMENTO.md com prioridades, funcionalidades previstas e tarefas das próximas etapas. | N | [Evidência 07 — Planejamento das próximas etapas](PLANEJAMENTO.md) | Nathália Salema Quintanilha | Conclusão da jornada de 11 horas do dia, distribuídas entre estudo (2h), desenvolvimento (8h) e planejamento (1h). |
+| Desenvolvimento | 08/11/2026 | 08/11/2026 | 1,5 | Implementação do menu hambúrguer responsivo com React e CSS, reorganização dos estilos e adaptação da navegação para dispositivos móveis. | N | [Evidência 08 — Menu responsivo](evidencias/menu-responsivo-08-11.png) | Nathália Salema Quintanilha | Cabeçalho adaptado para celulares e tablets, preservando a versão para computadores. |
+| Testes | 08/11/2026 | 08/11/2026 | 0,5 | Testes de abertura e fechamento do menu, navegação entre páginas e visualização em diferentes tamanhos de tela. | N | [Evidência 08 — Menu responsivo](evidencias/menu-responsivo-08-11.png) | Nathália Salema Quintanilha | Funcionamento e responsividade verificados no navegador. |
+| Desenvolvimento | 08/11/2026 | 08/11/2026 | 6 | Desenvolvimento da página Sobre, incluindo a história do clube, explicação do funcionamento, informações sobre Beatriz Costa, vídeos incorporados e links para redes sociais. Experimentação de diferentes layouts, ajustes de cores, tipografia, espaçamentos e cards até alcançar o resultado desejado. Tentativa de implementação de um carrossel de vídeos, posteriormente adiada após dificuldades técnicas. | N | [Evidência 09 — Página Sobre](https://github.com/nathaliasalema/Clube-da-Bia) | Nathália Salema Quintanilha | Implementação com React e CSS, testes no navegador, correção de erros e refinamento visual. Inserir o link específico do commit após o versionamento. |
+| Requisitos | 08/11/2026 | 08/11/2026 | 1 | Reunião com Beatriz Costa e participantes do clube para apresentação do desenvolvimento realizado e discussão dos próximos passos do projeto. Recebimento das informações sobre o livro e a avaliação do mês para atualização posterior da plataforma. | S | [Evidência 10 — Reunião com o clube](evidencias/encontro-clube-08-11.png) | Nathália Salema Quintanilha | Acompanhamento com a cliente e a comunidade, alinhamento das próximas funcionalidades e recebimento de novos dados. |
 
-**TOTAL DE HORAS DECLARADAS: 24 h**
+**TOTAL DE HORAS DECLARADAS: 33 h**
 
 ---
 
@@ -28,12 +32,12 @@
 | Etapa | Horas | % do total |
 |---|---:|---:|
 | Prospecção | 0 | 0% |
-| Requisitos | 2 | 8,33% |
-| Planejamento/design | 4 | 16,67% |
-| Desenvolvimento | 18 | 75,00% |
-| Testes | 0 | 0% |
+| Requisitos | 3 | 9,09% |
+| Planejamento/design | 4 | 12,12% |
+| Desenvolvimento | 25,5 | 77,27% |
+| Testes | 0,5 | 1,52% |
 | Entrega/implantação | 0 | 0% |
-| **TOTAL** | **24** | **100%** |
+| **TOTAL** | **33** | **100%** |
 
 ---
 
@@ -132,7 +136,8 @@ A planilha servirá como base para o desenvolvimento da página Nossa Estante, p
 Estudo e revisão dos fundamentos do React por meio da documentação oficial, abordando componentes, props, compartilhamento de dados entre componentes e organização da interface.
 
 A atividade teve como objetivo reforçar os conhecimentos necessários para o desenvolvimento da página Nossa Estante do projeto Clube do Livro da Bia.
-obs: comecei o estudo e desenvolvimento pela manhã mas só lembrei de tirar print no almoço.
+
+**Observação:** Comecei o estudo e desenvolvimento pela manhã, mas só lembrei de tirar o print no almoço.
 
 **Imagem:**
 
@@ -166,7 +171,7 @@ Por fim, foram realizados ajustes na estilização dos cards, organização do l
 
 **Link do commit:**
 
-[Visualizar implementação da Nossa Estante no GitHub]
+[Visualizar implementação da Nossa Estante no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/0fe07ba50f01ef551d03344210c611e64bb02a89)
 
 ---
 
@@ -196,11 +201,78 @@ O resultado da atividade foi registrado no arquivo PLANEJAMENTO.md, disponível 
 
 ---
 
-## Observações sobre o contato com a cliente
+### Evidência 08 — Implementação do menu responsivo
 
-O projeto Clube do Livro da Bia está sendo desenvolvido para atender às necessidades de um clube de leitura já existente, cuja comunidade se reúne em um grupo no Telegram.
+**Data:** 08/11/2026
 
-Já foi estabelecido contato com Beatriz Costa, responsável pelo clube, e mantemos conversas sobre o projeto, suas necessidades e as possibilidades de desenvolvimento da plataforma.
+**Etapa relacionada:** Desenvolvimento.
 
-Em 08/10/2026, foi realizado um encontro de 2 horas com a cliente e participantes da comunidade para discutir o desenvolvimento do site. Também mantemos contato sobre as minhas atualizações diárias pelo telegram.
+**Duração:** 2 horas.
+
+**Descrição:**
+
+Implementação de melhorias na responsividade do cabeçalho do site Clube do Livro da Bia, incluindo a criação de um menu hambúrguer para dispositivos móveis e tablets.
+
+A atividade envolveu a utilização do hook useState do React para controlar a abertura e o fechamento do menu, a reorganização das regras CSS para eliminar estilos duplicados e a preservação da navegação na versão para computadores.
+
+Foram realizados testes de responsividade no navegador, verificando a exibição do menu, a navegação entre páginas e o funcionamento dos botões.
+
+**Imagem:**
+
+![Menu responsivo do Clube do Livro da Bia](evidencias/menu-responsivo-08-11.png)
+
+---
+
+### Evidência 09 — Desenvolvimento e refinamento da página Sobre
+
+**Data:** 08/11/2026
+
+**Etapa relacionada:** Desenvolvimento.
+
+**Duração:** 6 horas.
+
+**Descrição:**
+
+Desenvolvimento da página Sobre do site Clube do Livro da Bia, utilizando React, JavaScript e CSS, com o objetivo de apresentar a história do clube, seu funcionamento, as formas de participação e informações sobre sua idealizadora, Beatriz Costa.
+
+A implementação incluiu a criação de seções para apresentação do clube explicação das etapas de escolha e leitura dos livros, convite para participação no grupo do Telegram e apresentação da dona do clube.
+
+Também foram incorporados quatro vídeos do YouTube, permitindo a reprodução diretamente na página, além de links para as redes sociais da Beatriz, utilizando ícones das bibliotecas Lucide React e React Icons.
+
+Durante o desenvolvimento, foram elaboradas e testadas diferentes versões do layout. O processo envolveu alterações na paleta de cores, tipografia, espaçamento, organização dos conteúdos e estilização dos cards.
+
+Também foi realizada uma tentativa de implementar um carrossel de vídeos. Durante essa atividade, surgiram dificuldades relacionadas à importação e à organização do componente no projeto. A implementação foi descartada da versão atual, sendo substituída por uma grade de vídeos incorporados.
+
+**Observação:**
+A tentativa de implementação do carrossel foi mantida como registro do processo de experimentação técnica, embora a funcionalidade não faça parte da versão final dessa etapa.
+
+---
+
+### Evidência 10 — Reunião de acompanhamento com a cliente e a comunidade
+
+**Data:** 08/11/2026
+
+**Etapa relacionada:** Requisitos.
+
+**Duração:** 1 hora.
+
+**Descrição:**
+
+Reunião com a Beatriz Costa e participantes da comunidade para acompanhamento do desenvolvimento do site.
+
+Durante o encontro, foi apresentado o andamento do projeto, incluindo as funcionalidades já desenvolvidas e as próximas etapas previstas para a plataforma.
+
+A reunião permitiu compartilhar os resultados alcançados, discutir as necessidades do clube e alinhar as prioridades para a continuidade do desenvolvimento.
+
+Também foram fornecidas as informações referentes ao livro e à avaliação do mês, que serão utilizadas para atualizar os dados apresentados na página Nossa Estante.
+
+
+**Imagem:**
+
+![Reunião de acompanhamento com Beatriz Costa e participantes do clube](evidencias/encontro-clube-08-11.png)
+
+**Observação:**
+
+A inclusão do livro e da avaliação do mês na plataforma será realizada em uma atividade posterior.
+
 
