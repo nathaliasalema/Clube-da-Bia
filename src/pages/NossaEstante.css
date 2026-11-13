@@ -481,3 +481,101 @@
     font-size: 15px;
   }
 }
+
+
+/* =========================================
+   GRÁFICO DE PAÍSES — BARRAS HORIZONTAIS
+   ========================================= */
+
+.numeros-paises-card {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.numeros-paises-card .numeros-grafico-card {
+  height: auto;
+  padding: 28px 30px 34px;
+}
+
+.numeros-paises-lista {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 950px;
+  margin: 8px auto 0;
+
+  gap: 18px;
+}
+
+.numeros-pais-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.numeros-pais-cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.numeros-pais-nome {
+  color: #633b55;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.numeros-pais-quantidade {
+  color: #936e83;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.numeros-pais-trilha {
+  width: 100%;
+  height: 13px;
+
+  background: #f7e9f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.numeros-pais-barra {
+  height: 100%;
+  background: #d96c9f;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .numeros-paises-card .numeros-grafico-card {
+    padding: 22px 18px 28px;
+  }
+
+  .numeros-paises-lista {
+    gap: 16px;
+  }
+
+  .numeros-pais-nome {
+    font-size: 13px;
+  }
+
+  .numeros-pais-quantidade {
+    font-size: 12px;
+  }
+
+  .numeros-pais-trilha {
+    height: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .numeros-pais-barra {
+    transition: none;
+  }
+}

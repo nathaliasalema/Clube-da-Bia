@@ -1,13 +1,39 @@
 
 /* =====================================
    PÁGINA SOBRE — CLUBE DA BIA
-===================================== */
+   ===================================== */
+
+/* CORES DA IDENTIDADE VISUAL */
 
 .sobre-page {
+  --sobre-rosa: #ec3778;
+  --sobre-rosa-hover: #ce2865;
+  --sobre-rosa-claro: #fce5ef;
+  --sobre-rosa-suave: #fff1f6;
+
+  --sobre-ameixa: #633b55;
+  --sobre-texto: #755568;
+  --sobre-texto-suave: #a17d91;
+
+  --sobre-borda: #f2dce6;
+
   min-height: 100vh;
-  padding: 50px 24px 90px;
-  background: #fffbfa;
-  color: #66525e;
+  padding: 55px 24px 90px;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(255, 219, 232, 0.55),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 18%,
+      rgba(239, 228, 255, 0.4),
+      transparent 28%
+    ),
+    #fff9fa;
+
+  color: var(--sobre-texto);
 }
 
 .sobre-container {
@@ -17,51 +43,73 @@
 
 /* =====================================
    INTRODUÇÃO
-===================================== */
+   ===================================== */
 
 .sobre-intro {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto 60px;
   text-align: center;
 }
 
+.sobre-intro-etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #d96c9f;
+}
+
 .sobre-etiqueta {
-  color: #c72f64;
+  color: #c65387;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .sobre-intro h1 {
-  margin: 14px 0;
-  color: #40343a;
-  font-size: clamp(34px, 4vw, 48px);
+  margin: 17px 0 16px;
+
+  color: var(--sobre-ameixa);
+  font-size: clamp(34px, 4.5vw, 52px);
   line-height: 1.2;
+}
+
+.sobre-intro h1 span {
+  color: var(--sobre-rosa);
 }
 
 .sobre-subtitulo {
   max-width: 650px;
   margin: 0 auto;
-  color: #66525e;
+
+  color: var(--sobre-texto);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* =====================================
    CARD — COMO TUDO COMEÇOU
-===================================== */
+   ===================================== */
 
 .sobre-historia {
   max-width: 1000px;
   margin: 0 auto 75px;
-  padding: 42px 48px;
+  padding: 44px 48px;
 
-  border: 1px solid #ede3e1;
-  border-radius: 22px;
-  background: #fffcfb;
+  border: 1px solid var(--sobre-borda);
+  border-radius: 24px;
 
-  box-shadow: 0 8px 28px rgba(70, 45, 55, 0.035);
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff7fa 100%
+    );
+
+  box-shadow:
+    0 10px 30px rgba(112, 67, 92, 0.055);
 }
 
 .sobre-historia-topo {
@@ -70,11 +118,11 @@
 
 .sobre-historia-selo {
   display: inline-block;
-  padding: 7px 13px;
+  padding: 8px 14px;
 
   border-radius: 20px;
-  background: #f6f0ec;
-  color: #826a65;
+  background: var(--sobre-rosa-claro);
+  color: #b74f7f;
 
   font-size: 11px;
   font-weight: 700;
@@ -83,14 +131,16 @@
 
 .sobre-historia h2 {
   margin: 0 0 22px;
-  color: #40343a;
+
+  color: var(--sobre-ameixa);
   font-size: clamp(27px, 3vw, 34px);
 }
 
 .sobre-historia p {
   max-width: 850px;
   margin: 0 0 18px;
-  color: #66525e;
+
+  color: var(--sobre-texto);
   font-size: 15px;
   line-height: 1.9;
 }
@@ -101,7 +151,7 @@
 
 /* =====================================
    COMO FUNCIONA
-===================================== */
+   ===================================== */
 
 .sobre-secao {
   margin-bottom: 75px;
@@ -109,24 +159,32 @@
 
 .sobre-secao h2 {
   margin: 0 0 28px;
-  color: #40343a;
+
+  color: var(--sobre-ameixa);
   font-size: clamp(26px, 3vw, 34px);
 }
 
 .sobre-passos {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
   gap: 22px;
 }
 
 .sobre-passo {
+  min-width: 0;
   padding: 32px 24px;
-  border: 1px solid #f1e2e6;
-  border-radius: 18px;
+
+  border: 1px solid var(--sobre-borda);
+  border-radius: 20px;
   background: #ffffff;
+
   text-align: center;
 
-  box-shadow: 0 6px 20px rgba(120, 65, 85, 0.04);
+  box-shadow:
+    0 7px 24px rgba(120, 65, 85, 0.05);
 
   transition:
     transform 0.25s ease,
@@ -135,7 +193,9 @@
 
 .sobre-passo:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(120, 65, 85, 0.09);
+
+  box-shadow:
+    0 14px 30px rgba(120, 65, 85, 0.1);
 }
 
 .sobre-passo-icone {
@@ -146,22 +206,32 @@
   width: 58px;
   height: 58px;
   margin: 0 auto 20px;
+
   border-radius: 16px;
 }
 
-.sobre-passo:nth-child(1) .sobre-passo-icone {
-  background: #fff0f5;
-  color: #e83f78;
+/* ROSA */
+
+.sobre-passo:nth-child(1)
+.sobre-passo-icone {
+  background: #fce5ef;
+  color: #dc4c88;
 }
 
-.sobre-passo:nth-child(2) .sobre-passo-icone {
-  background: #eef5ef;
-  color: #789b86;
+/* VERDE PASTEL */
+
+.sobre-passo:nth-child(2)
+.sobre-passo-icone {
+  background: #ddf2e9;
+  color: #579e83;
 }
 
-.sobre-passo:nth-child(3) .sobre-passo-icone {
-  background: #fff6e8;
-  color: #c18e4e;
+/* AMARELO PASTEL */
+
+.sobre-passo:nth-child(3)
+.sobre-passo-icone {
+  background: #fff0ce;
+  color: #c58b38;
 }
 
 .sobre-passo-icone svg {
@@ -172,41 +242,64 @@
 
 .sobre-passo h3 {
   margin: 0 0 14px;
-  color: #40343a;
+
+  color: var(--sobre-ameixa);
   font-size: 18px;
 }
 
 .sobre-passo p {
   margin: 0;
-  color: #66525e;
+
+  color: var(--sobre-texto);
   font-size: 14px;
   line-height: 1.8;
 }
 
 /* =====================================
    QUER FAZER PARTE?
-===================================== */
+   ===================================== */
 
 .sobre-participar {
-  margin: 75px 0 90px;
-  padding: 48px 25px;
+  position: relative;
 
-  border: 1px solid #f4dce4;
-  border-radius: 22px;
-  background: #fff5f7;
+  margin: 75px 0 90px;
+  padding: 52px 25px;
+
+  border: 1px solid #f3d7e4;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f6 0%,
+      #ffe5ef 100%
+    );
+
   text-align: center;
+  overflow: hidden;
+}
+
+.sobre-participar-detalhe {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #d96c9f;
+  font-size: 28px;
+  line-height: 1;
 }
 
 .sobre-participar h2 {
   margin: 0 0 16px;
-  color: #40343a;
-  font-size: clamp(26px, 3vw, 34px);
+
+  color: var(--sobre-ameixa);
+  font-size: clamp(26px, 3vw, 36px);
 }
 
 .sobre-participar p {
   max-width: 570px;
   margin: 0 auto 28px;
-  color: #66525e;
+
+  color: var(--sobre-texto);
   font-size: 15px;
   line-height: 1.8;
 }
@@ -220,50 +313,66 @@
   padding: 14px 28px;
   border-radius: 30px;
 
-  background: #e83f78;
+  background: var(--sobre-rosa);
   color: #ffffff;
 
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 
-  box-shadow: 0 6px 18px rgba(232, 63, 120, 0.15);
+  box-shadow:
+    0 7px 20px rgba(236, 55, 120, 0.18);
 
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .sobre-botao:hover {
-  background: #c72f64;
+  background: var(--sobre-rosa-hover);
   transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(236, 55, 120, 0.23);
 }
 
 /* =====================================
    CONHEÇA A BIA
-===================================== */
+   ===================================== */
 
 .sobre-bia {
   text-align: center;
 }
 
+.sobre-bia-etiqueta {
+  margin-bottom: 12px;
+
+  color: #c65387;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 .sobre-bia h2 {
   margin: 0 0 22px;
-  color: #40343a;
-  font-size: clamp(26px, 3vw, 34px);
+
+  color: var(--sobre-ameixa);
+  font-size: clamp(26px, 3vw, 36px);
 }
 
 .sobre-bia-descricao {
   max-width: 680px;
   margin: 0 auto;
-  color: #66525e;
+
+  color: var(--sobre-texto);
   font-size: 15px;
   line-height: 1.9;
 }
 
 /* =====================================
    VÍDEOS
-===================================== */
+   ===================================== */
 
 .sobre-bia-videos {
   margin-top: 65px;
@@ -271,33 +380,51 @@
 
 .sobre-bia h3 {
   margin: 0 0 28px;
-  color: #40343a;
+
+  color: var(--sobre-ameixa);
   font-size: 23px;
 }
 
 .sobre-videos {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
 
+  gap: 24px;
   max-width: 860px;
   margin: 0 auto;
 }
 
 .sobre-video-card {
+  min-width: 0;
   overflow: hidden;
   padding: 8px;
 
-  border: 1px solid #f1e2e6;
+  border: 1px solid var(--sobre-borda);
   border-radius: 18px;
   background: #ffffff;
 
-  box-shadow: 0 6px 20px rgba(120, 65, 85, 0.06);
+  box-shadow:
+    0 6px 20px rgba(120, 65, 85, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sobre-video-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(120, 65, 85, 0.1);
 }
 
 .sobre-video {
   overflow: hidden;
   aspect-ratio: 16 / 9;
+
   border-radius: 12px;
   background: #f5dce5;
 }
@@ -311,7 +438,7 @@
 
 /* =====================================
    REDES SOCIAIS
-===================================== */
+   ===================================== */
 
 .sobre-bia-redes {
   margin-top: 70px;
@@ -331,11 +458,12 @@
   gap: 10px;
 
   padding: 13px 20px;
-  border: 1px solid #ead5de;
+
+  border: 1px solid #edccdc;
   border-radius: 30px;
 
   background: #ffffff;
-  color: #40343a;
+  color: var(--sobre-ameixa);
 
   font-size: 14px;
   font-weight: 600;
@@ -343,14 +471,16 @@
 
   transition:
     background 0.2s ease,
+    border-color 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease;
 }
 
 .sobre-rede:hover {
-  background: #e83f78;
-  border-color: #e83f78;
+  background: var(--sobre-rosa);
+  border-color: var(--sobre-rosa);
   color: #ffffff;
+
   transform: translateY(-2px);
 }
 
@@ -362,17 +492,17 @@
 
 /* =====================================
    ACESSIBILIDADE
-===================================== */
+   ===================================== */
 
 .sobre-botao:focus-visible,
 .sobre-rede:focus-visible {
-  outline: 3px solid #c72f64;
+  outline: 3px solid var(--sobre-rosa-hover);
   outline-offset: 4px;
 }
 
 /* =====================================
    TABLETS
-===================================== */
+   ===================================== */
 
 @media (max-width: 900px) {
   .sobre-passos {
@@ -390,7 +520,7 @@
 
 /* =====================================
    CELULARES
-===================================== */
+   ===================================== */
 
 @media (max-width: 700px) {
   .sobre-page {
@@ -440,7 +570,7 @@
 
 /* =====================================
    CELULARES PEQUENOS
-===================================== */
+   ===================================== */
 
 @media (max-width: 480px) {
   .sobre-intro h1 {
@@ -465,18 +595,20 @@
 
 /* =====================================
    REDUÇÃO DE MOVIMENTO
-===================================== */
+   ===================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .sobre-passo,
   .sobre-botao,
-  .sobre-rede {
+  .sobre-rede,
+  .sobre-video-card {
     transition: none;
   }
 
   .sobre-passo:hover,
   .sobre-botao:hover,
-  .sobre-rede:hover {
+  .sobre-rede:hover,
+  .sobre-video-card:hover {
     transform: none;
   }
 }

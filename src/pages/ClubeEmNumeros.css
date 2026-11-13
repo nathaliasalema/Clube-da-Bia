@@ -1,0 +1,599 @@
+
+/* =========================================
+   CLUBE EM NÚMEROS — DASHBOARD
+   ========================================= */
+
+.numeros-pagina {
+  min-height: 100vh;
+  padding: 32px 20px 70px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #ffe3ed 0,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at top right,
+      #eae3ff 0,
+      transparent 32%
+    ),
+    #fff9f8;
+
+  color: #513349;
+}
+
+.numeros-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TÍTULO */
+
+.numeros-topo {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.numeros-etiqueta {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #ae6488;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.numeros-topo h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  color: #673956;
+}
+
+.numeros-topo h1 span {
+  color: #dc80a8;
+}
+
+/* FILTRO */
+
+.numeros-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.numeros-filtros label {
+  color: #80566f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.numeros-filtros select {
+  padding: 11px 35px 11px 15px;
+
+  border: 1px solid #eed2df;
+  border-radius: 13px;
+
+  background: #fff;
+  color: #6a3c59;
+
+  font: inherit;
+  cursor: pointer;
+  outline-color: #d96c9f;
+}
+
+/* INDICADORES */
+
+.numeros-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.numeros-card {
+  min-width: 0;
+  min-height: 145px;
+  padding: 20px;
+
+  background: var(--card-cor);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 22px;
+
+  box-shadow:
+    0 7px 25px rgba(118, 71, 100, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.numeros-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(118, 71, 100, 0.11);
+}
+
+.numeros-card-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  margin-bottom: 15px;
+
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #995478;
+}
+
+.numeros-card-valor {
+  color: #603750;
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.numeros-card-titulo {
+  margin-top: 7px;
+  color: #7c6171;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* CARDS DOS GRÁFICOS */
+
+.numeros-grid-graficos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  align-items: stretch;
+  gap: 18px;
+}
+
+.numeros-grafico-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 24px 20px;
+
+  background: #fff;
+  border: 1px solid #f3e3e9;
+  border-radius: 23px;
+
+  box-shadow:
+    0 8px 28px rgba(112, 67, 92, 0.045);
+}
+
+.numeros-grafico-cabecalho {
+  margin-bottom: 18px;
+  padding: 0 5px;
+}
+
+.numeros-grafico-cabecalho h2 {
+  margin: 0 0 8px;
+  color: #633b55;
+  font-size: 19px;
+}
+
+.numeros-grafico-cabecalho p {
+  margin: 0;
+  color: #9b8290;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.numeros-grafico-conteudo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+.numeros-area-grafico {
+  width: 100%;
+  min-width: 0;
+}
+
+.numeros-sem-dados {
+  padding: 35px 10px;
+  text-align: center;
+  color: #967b8a;
+}
+
+/* =========================================
+   GRÁFICO DE PAÍSES
+
+   Centraliza quando cabe no card.
+   Quando não cabe, permite rolagem.
+   ========================================= */
+
+.numeros-paises-scroll {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 0 0 14px;
+
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: #dda0bd #f9eaf1;
+}
+
+.numeros-paises-grafico {
+  /* Impede o gráfico de encolher. */
+  flex: 0 0 auto;
+
+  /*
+    Se couber, as margens automáticas
+    centralizam o gráfico.
+
+    Se não couber, o gráfico começa
+    à esquerda e pode ser rolado.
+  */
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: none;
+}
+
+.numeros-paises-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.numeros-paises-scroll::-webkit-scrollbar-track {
+  background: #f9eaf1;
+  border-radius: 10px;
+}
+
+.numeros-paises-scroll::-webkit-scrollbar-thumb {
+  background: #dda0bd;
+  border-radius: 10px;
+}
+
+.numeros-paises-scroll::-webkit-scrollbar-thumb:hover {
+  background: #ca7fa5;
+}
+
+/* =========================================
+   QUERIDINHOS — PRATELEIRA HORIZONTAL
+   ========================================= */
+
+.numeros-destaque {
+  margin-top: 20px;
+  padding: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #fff,
+    #fff1f6
+  );
+
+  border: 1px solid #f2dce6;
+  border-radius: 25px;
+
+  min-width: 0;
+}
+
+.numeros-destaque-titulo {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+  margin-bottom: 25px;
+
+  color: #c16b94;
+}
+
+.numeros-destaque-titulo h2 {
+  margin: 0 0 6px;
+  color: #633b55;
+  font-size: 23px;
+}
+
+.numeros-destaque-titulo p {
+  margin: 0;
+  color: #967b8a;
+  font-size: 13px;
+}
+
+/* Prateleira sem quebra de linha */
+
+.numeros-ranking {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 0 2px 16px;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: #dda0bd #f9eaf1;
+}
+
+/* Centraliza os livros quando há espaço.
+   Não prejudica a rolagem horizontal. */
+
+.numeros-ranking::before,
+.numeros-ranking::after {
+  content: '';
+  margin: auto;
+}
+
+.numeros-ranking::-webkit-scrollbar {
+  height: 8px;
+}
+
+.numeros-ranking::-webkit-scrollbar-track {
+  background: #f9eaf1;
+  border-radius: 10px;
+}
+
+.numeros-ranking::-webkit-scrollbar-thumb {
+  background: #dda0bd;
+  border-radius: 10px;
+}
+
+.numeros-ranking::-webkit-scrollbar-thumb:hover {
+  background: #ca7fa5;
+}
+
+/* CARDS DOS LIVROS */
+
+.numeros-livro {
+  position: relative;
+
+  flex: 0 0 220px;
+
+  width: 220px;
+  min-width: 220px;
+
+  box-sizing: border-box;
+  padding: 14px;
+
+  background: #fff;
+  border: 1px solid #f3e3e9;
+  border-radius: 17px;
+
+  display: flex;
+  flex-direction: column;
+
+  scroll-snap-align: start;
+}
+
+.numeros-posicao {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 1;
+
+  padding: 5px 9px;
+
+  background: #d96c9f;
+  color: #fff;
+
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.numeros-livro img,
+.numeros-sem-capa {
+  display: block;
+
+  width: 100%;
+  height: 220px;
+
+  object-fit: contain;
+  background: #f9f0f4;
+  border-radius: 11px;
+}
+
+.numeros-sem-capa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b77b99;
+}
+
+.numeros-livro-info {
+  flex: 1;
+  padding-top: 13px;
+}
+
+.numeros-livro-info h3 {
+  margin: 0 0 6px;
+  color: #633b55;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.numeros-livro-info p,
+.numeros-livro-info span {
+  display: block;
+  margin: 0 0 5px;
+
+  color: #947a89;
+  font-size: 12px;
+}
+
+.numeros-nota {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+  margin-top: 10px;
+
+  color: #b46a19;
+  font-size: 15px;
+}
+
+/* CARREGAMENTO E ERROS */
+
+.numeros-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 14px;
+  min-height: 50vh;
+
+  color: #9b6582;
+  text-align: center;
+}
+
+.numeros-girando {
+  animation:
+    numeros-girar 1.4s linear infinite;
+}
+
+@keyframes numeros-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .numeros-cards {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+
+  .numeros-livro {
+    flex-basis: 200px;
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .numeros-pagina {
+    padding: 28px 14px 60px;
+  }
+
+  .numeros-grid-graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .numeros-grafico-card {
+    height: auto;
+    padding: 20px 12px;
+  }
+
+  .numeros-filtros {
+    justify-content: center;
+  }
+
+  .numeros-destaque {
+    padding: 20px 14px;
+  }
+
+  .numeros-destaque-titulo h2 {
+    font-size: 20px;
+  }
+
+  .numeros-livro {
+    flex-basis: 185px;
+    width: 185px;
+    min-width: 185px;
+  }
+
+  .numeros-livro img,
+  .numeros-sem-capa {
+    height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .numeros-pagina {
+    padding-top: 24px;
+  }
+
+  .numeros-topo {
+    margin-bottom: 16px;
+  }
+
+  .numeros-cards {
+    gap: 12px;
+  }
+
+  .numeros-card {
+    min-height: 135px;
+    padding: 15px;
+  }
+
+  .numeros-card-valor {
+    font-size: 21px;
+  }
+
+  .numeros-livro {
+    flex-basis: 165px;
+    width: 165px;
+    min-width: 165px;
+  }
+
+  .numeros-livro img,
+  .numeros-sem-capa {
+    height: 170px;
+  }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  .numeros-card {
+    transition: none;
+  }
+
+  .numeros-card:hover {
+    transform: none;
+  }
+
+  .numeros-girando {
+    animation: none;
+  }
+
+  .numeros-ranking,
+  .numeros-paises-scroll {
+    scroll-behavior: auto;
+  }
+}

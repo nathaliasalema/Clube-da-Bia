@@ -4,224 +4,39 @@
    Estilos da página inicial
 ================================== */
 
-/* Seção principal */
-.hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 90px 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
-  min-height: 550px;
-}
+/* SEÇÃO PRINCIPAL */
 
-/* Título de boas-vindas */
-.hero-content h1 {
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1.15;
-  margin: 0 0 25px;
-}
-
-/* Destaque rosa do título */
-.hero-content h1 span {
-  display: block;
-  color: #e83f78;
-}
-
-/* Texto de apresentação */
-.hero-content p {
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 450px;
-  margin-bottom: 30px;
-}
-
-/* Botão principal */
-.hero-button {
-  display: inline-block;
-  background: #e83f78;
-  color: white;
-  padding: 15px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: background 0.3s ease,
-              transform 0.3s ease;
-}
-
-.hero-button:hover {
-  background: #c72f64;
-  transform: translateY(-3px);
-}
-
-
-/* Área da logo */
-.hero-image {
-  width: 100%;
-  max-width: 530px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #f9d8df;
-}
-
-/* Imagem da logo */
-.hero-logo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-
-/* ==================================
-   RESPONSIVIDADE PARA TABLETS
-================================== */
-
-@media (max-width: 1024px) {
-  .hero {
-    padding: 70px 30px;
-    gap: 35px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(36px, 4.5vw, 54px);
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
-/* ==================================
-   RESPONSIVIDADE PARA CELULARES
-================================== */
-
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 60px 24px;
-    text-align: center;
-    gap: 40px;
-    min-height: auto;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(34px, 7vw, 46px);
-  }
-
-  .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-image {
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .hero-button {
-    padding: 14px 24px;
-  }
-}
-
-/* ==================================
-   CELULARES PEQUENOS
-================================== */
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 40px 20px;
-    gap: 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 34px;
-  }
-
-  .hero-content p {
-    font-size: 15px;
-  }
-
-  .hero-image {
-    max-width: 300px;
-  }
-}
-
-/* ==================================
-   DETALHES DECORATIVOS DA HOME
-================================== */
-
-/* Sombra suave na logo principal */
-.hero-image {
-  box-shadow:
-    0 15px 45px rgba(232, 63, 120, 0.12),
-    0 4px 12px rgba(120, 65, 85, 0.05);
-
-  transition: transform 0.4s ease,
-              box-shadow 0.4s ease;
-}
-
-/* Efeito delicado ao passar o mouse */
-.hero-image:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 22px 55px rgba(232, 63, 120, 0.17),
-    0 6px 16px rgba(120, 65, 85, 0.07);
-}
-
-/* Botão principal com sombra */
-.hero-button {
-  box-shadow: 0 6px 18px rgba(232, 63, 120, 0.15);
-}
-
-/* Acessibilidade: reduzir animações */
-@media (prefers-reduced-motion: reduce) {
-  .hero-image,
-  .hero-button {
-    transition: none;
-  }
-
-  .hero-image:hover {
-    transform: none;
-  }
-}
-
-
-/* ========================================
-   DETALHES FRUFRU - CLUBE DA BIA
-======================================== */
-
-/* Permite posicionar os enfeites na hero */
 .hero {
   position: relative;
   isolation: isolate;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+
+  max-width: 1150px;
+  min-height: 520px;
+  margin: 0 auto;
+  padding: 75px 40px;
 }
 
-/* Conteúdo fica na frente dos enfeites */
+/* CONTEÚDO */
+
 .hero-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
+/* FRASE ACIMA DO TÍTULO */
 
-/* Frase delicada acima do título */
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 22px;
-  padding: 0;
-
-  background: transparent;
-  border: none;
-  border-radius: 0;
+  margin-bottom: 20px;
 
   color: #c72f64;
   font-size: 12px;
@@ -230,71 +45,176 @@
   text-transform: uppercase;
 }
 
-/* Estrelinhas da frase */
 .hero-eyebrow > span:first-child,
 .hero-eyebrow > span:last-child {
   color: #e83f78;
   font-size: 13px;
 }
 
-/* Pequenos detalhes abaixo do botão */
+/* TÍTULO */
+
+.hero-content h1 {
+  margin: 0 0 22px;
+  font-size: clamp(40px, 4.4vw, 56px);
+  line-height: 1.15;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: #e83f78;
+}
+
+/* TEXTO DE APRESENTAÇÃO */
+
+.hero-content p {
+  max-width: 440px;
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* BOTÃO PRINCIPAL */
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 28px;
+
+  border-radius: 30px;
+  background: #e83f78;
+  color: white;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 6px 18px rgba(232, 63, 120, 0.15);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #c72f64;
+  transform: translateY(-3px);
+}
+
+.hero-button:focus-visible {
+  outline: 3px solid #40343a;
+  outline-offset: 4px;
+}
+
+/* DETALHES ABAIXO DO BOTÃO */
+
 .hero-little-details {
-  margin-top: 22px;
+  margin-top: 20px;
   margin-left: 25px;
+
   color: #e9a4b7;
   font-size: 20px;
   letter-spacing: 6px;
 }
 
-/* Enfeites espalhados pelo fundo */
+/* ==================================
+   LOGO PRINCIPAL
+================================== */
+
+.hero-image-wrapper {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  justify-self: center;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f9d8df;
+
+  box-shadow:
+    0 15px 45px rgba(232, 63, 120, 0.12),
+    0 4px 12px rgba(120, 65, 85, 0.05);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-image:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 22px 55px rgba(232, 63, 120, 0.17),
+    0 6px 16px rgba(120, 65, 85, 0.07);
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ==================================
+   ENFEITES DO FUNDO
+================================== */
+
 .hero-decoration {
   position: absolute;
   z-index: 0;
+
   pointer-events: none;
   user-select: none;
+
   color: #efb4c5;
 }
 
 .decoration-star-1 {
   top: 35px;
   left: 3%;
-  font-size: 30px;
+
+  font-size: 23px;
+  opacity: 0.7;
 }
 
 .decoration-star-2 {
   bottom: 55px;
   left: 42%;
-  font-size: 20px;
+
   color: #f3c6d1;
+  font-size: 17px;
+  opacity: 0.65;
 }
 
 .decoration-heart {
   top: 65px;
   right: 5%;
-  font-size: 34px;
+
   color: #efc1cf;
+  font-size: 25px;
+  opacity: 0.7;
 }
 
-/* Área da logo e seus enfeites */
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 530px;
-  justify-self: center;
-  z-index: 1;
-}
+/* ==================================
+   ENFEITES AO REDOR DA LOGO
+================================== */
 
-/* Mantém a logo dentro do espaço disponível */
-.hero-image-wrapper .hero-image {
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Brilhinhos ao redor da logo */
 .logo-sparkle,
 .logo-heart {
   position: absolute;
   z-index: 3;
+
   pointer-events: none;
   user-select: none;
   line-height: 1;
@@ -303,33 +223,82 @@
 .sparkle-top {
   top: 5%;
   right: -4%;
+
   color: #e83f78;
-  font-size: 38px;
+  font-size: 29px;
+  opacity: 0.85;
 }
 
 .sparkle-bottom {
   bottom: 7%;
   left: -5%;
+
   color: #e6a0b5;
-  font-size: 48px;
+  font-size: 34px;
+  opacity: 0.75;
 }
 
 .logo-heart {
   top: 12%;
   left: -5%;
+
   color: #e8a4b7;
-  font-size: 32px;
+  font-size: 24px;
+  opacity: 0.75;
 }
 
-/* ========================================
-   AJUSTES PARA TABLETS E CELULARES
-======================================== */
+/* ==================================
+   TABLETS
+================================== */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 65px 30px;
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 4.5vw, 50px);
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-image-wrapper {
+    max-width: 390px;
+  }
+}
+
+/* ==================================
+   CELULARES
+================================== */
 
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+
+    min-height: auto;
+    padding: 60px 24px;
+
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 7vw, 44px);
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-eyebrow {
-    font-size: 10px;
+    justify-content: center;
     gap: 7px;
-    padding: 9px 12px;
+    font-size: 10px;
+    letter-spacing: 0.8px;
   }
 
   .hero-little-details {
@@ -337,9 +306,8 @@
   }
 
   .hero-image-wrapper {
-    max-width: 400px;
     width: 88%;
-    margin: 0 auto;
+    max-width: 340px;
   }
 
   .decoration-star-1 {
@@ -358,58 +326,63 @@
   }
 }
 
+/* ==================================
+   CELULARES PEQUENOS
+================================== */
+
 @media (max-width: 480px) {
+  .hero {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
   .hero-eyebrow {
     font-size: 9px;
     letter-spacing: 0.2px;
   }
 
   .hero-image-wrapper {
-    max-width: 300px;
     width: 85%;
+    max-width: 280px;
+  }
+
+  .hero-button {
+    padding: 14px 24px;
   }
 
   .sparkle-top {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .sparkle-bottom {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .logo-heart {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 
+/* ==================================
+   ACESSIBILIDADE
+================================== */
 
-/* Enfeites mais sutis e elegantes */
-.decoration-star-1 {
-  font-size: 23px;
-  opacity: 0.7;
-}
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .hero-button {
+    transition: none;
+  }
 
-.decoration-star-2 {
-  font-size: 17px;
-  opacity: 0.65;
-}
-
-.decoration-heart {
-  font-size: 25px;
-  opacity: 0.7;
-}
-
-.sparkle-top {
-  font-size: 29px;
-  opacity: 0.85;
-}
-
-.sparkle-bottom {
-  font-size: 34px;
-  opacity: 0.75;
-}
-
-.logo-heart {
-  font-size: 24px;
-  opacity: 0.75;
+  .hero-image:hover,
+  .hero-button:hover {
+    transform: none;
+  }
 }

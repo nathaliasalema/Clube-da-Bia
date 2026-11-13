@@ -64,12 +64,21 @@ function Sobre() {
       <div className="sobre-container">
 
         {/* INTRODUÇÃO */}
-        <section className="sobre-intro">
-          <span className="sobre-etiqueta">
-            NOSSA HISTÓRIA
-          </span>
 
-          <h1>Sobre o Clube da Bia</h1>
+        <section className="sobre-intro">
+          <div className="sobre-intro-etiqueta">
+            <span aria-hidden="true">✦</span>
+
+            <span className="sobre-etiqueta">
+              NOSSA HISTÓRIA
+            </span>
+
+            <span aria-hidden="true">✦</span>
+          </div>
+
+          <h1>
+            Sobre o <span>Clube da Bia</span>
+          </h1>
 
           <p className="sobre-subtitulo">
             Um cantinho para compartilhar histórias,
@@ -78,6 +87,7 @@ function Sobre() {
         </section>
 
         {/* HISTÓRIA DO CLUBE */}
+
         <section className="sobre-historia">
           <div className="sobre-historia-topo">
             <span className="sobre-historia-selo">
@@ -103,10 +113,12 @@ function Sobre() {
         </section>
 
         {/* COMO FUNCIONA */}
+
         <section className="sobre-secao">
           <h2>Como funciona o clube?</h2>
 
           <div className="sobre-passos">
+
             <article className="sobre-passo">
               <div className="sobre-passo-icone">
                 <Vote aria-hidden="true" />
@@ -148,11 +160,17 @@ function Sobre() {
                 para conversar sobre o livro.
               </p>
             </article>
+
           </div>
         </section>
 
         {/* CONVITE PARA PARTICIPAR */}
+
         <section className="sobre-participar">
+          <span className="sobre-participar-detalhe" aria-hidden="true">
+            ♡
+          </span>
+
           <h2>Quer fazer parte?</h2>
 
           <p>
@@ -173,7 +191,12 @@ function Sobre() {
         </section>
 
         {/* CONHEÇA A BIA */}
+
         <section className="sobre-bia">
+          <div className="sobre-bia-etiqueta">
+            ✦ A CRIADORA DO NOSSO CLUBE ✦
+          </div>
+
           <h2>Conheça a Bia</h2>
 
           <p className="sobre-bia-descricao">
@@ -184,6 +207,7 @@ function Sobre() {
           </p>
 
           {/* VÍDEOS */}
+
           <div className="sobre-bia-videos">
             <h3>Um pouquinho mais sobre ela</h3>
 
@@ -213,6 +237,7 @@ function Sobre() {
           </div>
 
           {/* REDES SOCIAIS */}
+
           <div className="sobre-bia-redes">
             <h3>Acompanhe a Bia nas redes</h3>
 
@@ -238,6 +263,7 @@ function Sobre() {
               )}
             </div>
           </div>
+
         </section>
 
       </div>

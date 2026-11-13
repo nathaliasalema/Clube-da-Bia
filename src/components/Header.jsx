@@ -72,7 +72,7 @@ function Header() {
             Sobre
           </Link>
 
-          <Link to="/#estatisticas" onClick={fecharMenu}>
+          <Link to="/clube-em-numeros" onClick={fecharMenu}>
             Clube em Números
           </Link>
 

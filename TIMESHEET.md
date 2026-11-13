@@ -20,10 +20,12 @@
 | Planejamento/design | 06/11/2026 | 06/11/2026 | 1 | Elaboração do PLANEJAMENTO.md com prioridades, funcionalidades previstas e tarefas das próximas etapas. | N | [Evidência 07 — Planejamento das próximas etapas](PLANEJAMENTO.md) | Nathália Salema Quintanilha | Conclusão da jornada de 11 horas do dia, distribuídas entre estudo (2h), desenvolvimento (8h) e planejamento (1h). |
 | Desenvolvimento | 08/11/2026 | 08/11/2026 | 1,5 | Implementação do menu hambúrguer responsivo com React e CSS, reorganização dos estilos e adaptação da navegação para dispositivos móveis. | N | [Evidência 08 — Menu responsivo](evidencias/menu-responsivo-08-11.png) | Nathália Salema Quintanilha | Cabeçalho adaptado para celulares e tablets, preservando a versão para computadores. |
 | Testes | 08/11/2026 | 08/11/2026 | 0,5 | Testes de abertura e fechamento do menu, navegação entre páginas e visualização em diferentes tamanhos de tela. | N | [Evidência 08 — Menu responsivo](evidencias/menu-responsivo-08-11.png) | Nathália Salema Quintanilha | Funcionamento e responsividade verificados no navegador. |
-| Desenvolvimento | 08/11/2026 | 08/11/2026 | 6 | Desenvolvimento da página Sobre, incluindo a história do clube, explicação do funcionamento, informações sobre Beatriz Costa, vídeos incorporados e links para redes sociais. Experimentação de diferentes layouts, ajustes de cores, tipografia, espaçamentos e cards até alcançar o resultado desejado. Tentativa de implementação de um carrossel de vídeos, posteriormente adiada após dificuldades técnicas. | N | [Evidência 09 — Página Sobre](https://github.com/nathaliasalema/Clube-da-Bia) | Nathália Salema Quintanilha | Implementação com React e CSS, testes no navegador, correção de erros e refinamento visual. Inserir o link específico do commit após o versionamento. |
+| Desenvolvimento | 08/11/2026 | 08/11/2026 | 6 | Desenvolvimento da página Sobre, incluindo a história do clube, explicação do funcionamento, informações sobre Beatriz Costa, vídeos incorporados e links para redes sociais. Experimentação de diferentes layouts, ajustes de cores, tipografia, espaçamentos e cards até alcançar o resultado desejado. Tentativa de implementação de um carrossel de vídeos, posteriormente adiada após dificuldades técnicas. | N | [Evidência 09 — Página Sobre](https://github.com/nathaliasalema/Clube-da-Bia/commit/0fe07ba50f01ef551d03344210c611e64bb02a89) | Nathália Salema Quintanilha | Implementação com React e CSS, testes no navegador, correção de erros e refinamento visual. Inserir o link específico do commit após o versionamento. |
 | Requisitos | 08/11/2026 | 08/11/2026 | 1 | Reunião com Beatriz Costa e participantes do clube para apresentação do desenvolvimento realizado e discussão dos próximos passos do projeto. Recebimento das informações sobre o livro e a avaliação do mês para atualização posterior da plataforma. | S | [Evidência 10 — Reunião com o clube](evidencias/encontro-clube-08-11.png) | Nathália Salema Quintanilha | Acompanhamento com a cliente e a comunidade, alinhamento das próximas funcionalidades e recebimento de novos dados. |
+| Desenvolvimento | 09/11/2026 | 09/11/2026 | 8 | Implementação da seção de leitura atual na Home, com integração ao Google Sheets via Papa Parse, identificação automática do livro do mês, tratamento de carregamento e erros, inclusão de links para Telegram e Maratona, estilização CSS, ajustes de responsividade e testes visuais. | N | [Evidência 11 — Leitura atual] (evidencia/leitura-atual.png) | Nathália Salema Quintanilha | Integração de dados e refinamento da interface inicial. |
+| Desenvolvimento | 09/11/2026 | 09/11/2026 | 3h | Organização e classificação de 45 livros por gênero literário, país de origem, idioma original e gênero do autor. Ampliação da base de dados no Google Sheets e atualização da fórmula FILTER para sincronização automática com a aba Dados do site. | Não | evidencias/base-dados-clube-numeros.png | Nathália Salema Quintanilha | Preparação dos dados para a página Clube em Números. |
 
-**TOTAL DE HORAS DECLARADAS: 33 h**
+**TOTAL DE HORAS DECLARADAS: 44 h**
 
 ---
 
@@ -32,13 +34,12 @@
 | Etapa | Horas | % do total |
 |---|---:|---:|
 | Prospecção | 0 | 0% |
-| Requisitos | 3 | 9,09% |
-| Planejamento/design | 4 | 12,12% |
-| Desenvolvimento | 25,5 | 77,27% |
-| Testes | 0,5 | 1,52% |
+| Requisitos | 3 | 7,50% |
+| Planejamento/design | 4 | 10,00% |
+| Desenvolvimento | 36,5 | 82,56% |
+| Testes | 0,5 | 1,25% |
 | Entrega/implantação | 0 | 0% |
-| **TOTAL** | **33** | **100%** |
-
+| **TOTAL** | **44** | **100%** |
 ---
 
 ## Índice de evidências
@@ -276,3 +277,28 @@ Também foram fornecidas as informações referentes ao livro e à avaliação d
 A inclusão do livro e da avaliação do mês na plataforma será realizada em uma atividade posterior.
 
 
+---
+
+### Evidência 11 — Implementação da seção de leitura atual e melhorias na Home
+
+**Data:** 09/11/2026
+
+**Etapa relacionada:** Desenvolvimento.
+
+**Duração:** 8 horas.
+
+**Descrição:**
+
+Desenvolvimento da seção de leitura atual na página inicial do site Clube do Livro da Bia, utilizando React, JavaScript e CSS.
+
+Foi realizada a integração com o Google Sheets por meio da Fetch API e da biblioteca Papa Parse, permitindo identificar automaticamente o livro correspondente ao mês e ano atuais e apresentar sua capa, título e autoria. Também foram implementados tratamentos para carregamento, erros e ausência de dados.
+
+A seção recebeu botões de acesso ao grupo do Telegram e à leitura coletiva do livro no Maratona, além de ajustes de layout, espaçamento, estilização e responsividade.
+
+Também foram realizados refinamentos no banner principal da Home, incluindo a redução da logo e do título de boas-vindas, preservando a identidade visual do clube.
+
+**Evidência:**
+
+![Seção de leitura atual na página inicial](evidencias/leitura-atual.png)
+
+**Observação:** O título e a capa da leitura atual são obtidos automaticamente da planilha. A automatização do link da leitura coletiva no Maratona será feita em uma próxima etapa.

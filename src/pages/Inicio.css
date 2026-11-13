@@ -1,0 +1,247 @@
+
+/* ===========================
+   LEITURA ATUAL
+=========================== */
+
+.leitura-atual {
+  padding: 75px 24px 90px;
+  background: #fffbfa;
+  scroll-margin-top: 90px;
+}
+
+.leitura-atual-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.leitura-atual-cabecalho {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.leitura-atual-etiqueta {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #c75b80;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.leitura-atual-cabecalho h2 {
+  margin: 0;
+  color: #40343a;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.leitura-atual-cabecalho p {
+  max-width: 600px;
+  margin: 14px auto 0;
+  color: #766970;
+  line-height: 1.8;
+}
+
+/* CARD PRINCIPAL */
+
+.leitura-atual-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 38px 45px;
+  background: white;
+  border: 1px solid #f0e5e7;
+  border-radius: 28px;
+  box-shadow: 0 12px 35px rgba(95, 57, 70, 0.06);
+}
+
+/* CAPA + INFORMAÇÕES */
+
+.leitura-atual-livro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.leitura-atual-capa {
+  width: 205px;
+  min-width: 205px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5e0e8;
+  box-shadow: 8px 12px 22px rgba(76, 47, 57, 0.12);
+}
+
+.leitura-atual-capa img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leitura-atual-sem-capa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #a95373;
+  font-size: 3rem;
+}
+
+/* INFORMAÇÕES DO LIVRO */
+
+.leitura-atual-informacoes {
+  flex: 1;
+  min-width: 0;
+  max-width: 450px;
+}
+
+.leitura-atual-mes {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  border-radius: 100px;
+  background: #fceaf0;
+  color: #b74f74;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.leitura-atual-informacoes h3 {
+  margin: 0 0 12px;
+  color: #40343a;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.leitura-atual-autor {
+  margin: 0 0 20px;
+  color: #887980;
+}
+
+.leitura-atual-descricao {
+  margin: 0;
+  color: #665c61;
+  line-height: 1.75;
+}
+
+/* BOTÕES */
+
+.leitura-atual-acoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.leitura-atual-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border-radius: 100px;
+  background: #d65b83;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.leitura-atual-botao:hover {
+  background: #bf456f;
+  transform: translateY(-2px);
+}
+
+.leitura-atual-botao:focus-visible {
+  outline: 3px solid #40343a;
+  outline-offset: 4px;
+}
+
+/* BOTÃO DO MARATONA */
+
+.leitura-atual-botao-maratona {
+  background: #789b86;
+}
+
+.leitura-atual-botao-maratona:hover {
+  background: #5f826d;
+}
+
+/* MENSAGENS DE CARREGAMENTO */
+
+.leitura-atual-vazia {
+  text-align: center;
+  padding: 45px 15px;
+}
+
+.leitura-atual-vazia > span {
+  color: #c75b80;
+  font-size: 3rem;
+}
+
+.leitura-atual-vazia h3 {
+  color: #40343a;
+}
+
+.leitura-atual-vazia p,
+.leitura-atual-mensagem {
+  color: #766970;
+  line-height: 1.8;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 768px) {
+  .leitura-atual {
+    padding: 65px 18px 80px;
+  }
+
+  .leitura-atual-card {
+    padding: 28px 22px;
+  }
+
+  .leitura-atual-livro {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .leitura-atual-capa {
+    width: 190px;
+    min-width: 0;
+  }
+
+  .leitura-atual-informacoes {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .leitura-atual-acoes {
+    flex-direction: column;
+    margin-top: 26px;
+  }
+
+  .leitura-atual-botao {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .leitura-atual-card {
+    padding: 24px 16px;
+  }
+
+  .leitura-atual-capa {
+    width: 170px;
+  }
+}
