@@ -76,7 +76,7 @@ function Header() {
             Clube em Números
           </Link>
 
-          <Link to="/#premios" onClick={fecharMenu}>
+          <Link to="/premios" onClick={fecharMenu}>
             Prêmios
           </Link>
 

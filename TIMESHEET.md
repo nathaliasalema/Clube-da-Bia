@@ -22,10 +22,11 @@
 | Testes | 08/11/2026 | 08/11/2026 | 0,5 | Testes de abertura e fechamento do menu, navegação entre páginas e visualização em diferentes tamanhos de tela. | N | [Evidência 08 — Menu responsivo](evidencias/menu-responsivo-08-11.png) | Nathália Salema Quintanilha | Funcionamento e responsividade verificados no navegador. |
 | Desenvolvimento | 08/11/2026 | 08/11/2026 | 6 | Desenvolvimento da página Sobre, incluindo a história do clube, explicação do funcionamento, informações sobre Beatriz Costa, vídeos incorporados e links para redes sociais. Experimentação de diferentes layouts, ajustes de cores, tipografia, espaçamentos e cards até alcançar o resultado desejado. Tentativa de implementação de um carrossel de vídeos, posteriormente adiada após dificuldades técnicas. | N | [Evidência 09 — Página Sobre](https://github.com/nathaliasalema/Clube-da-Bia/commit/0fe07ba50f01ef551d03344210c611e64bb02a89) | Nathália Salema Quintanilha | Implementação com React e CSS, testes no navegador, correção de erros e refinamento visual. Inserir o link específico do commit após o versionamento. |
 | Requisitos | 08/11/2026 | 08/11/2026 | 1 | Reunião com Beatriz Costa e participantes do clube para apresentação do desenvolvimento realizado e discussão dos próximos passos do projeto. Recebimento das informações sobre o livro e a avaliação do mês para atualização posterior da plataforma. | S | [Evidência 10 — Reunião com o clube](evidencias/encontro-clube-08-11.png) | Nathália Salema Quintanilha | Acompanhamento com a cliente e a comunidade, alinhamento das próximas funcionalidades e recebimento de novos dados. |
-| Desenvolvimento | 09/11/2026 | 09/11/2026 | 8 | Implementação da seção de leitura atual na Home, com integração ao Google Sheets via Papa Parse, identificação automática do livro do mês, tratamento de carregamento e erros, inclusão de links para Telegram e Maratona, estilização CSS, ajustes de responsividade e testes visuais. | N | [Evidência 11 — Leitura atual] (evidencia/leitura-atual.png) | Nathália Salema Quintanilha | Integração de dados e refinamento da interface inicial. |
-| Desenvolvimento | 09/11/2026 | 09/11/2026 | 3h | Organização e classificação de 45 livros por gênero literário, país de origem, idioma original e gênero do autor. Ampliação da base de dados no Google Sheets e atualização da fórmula FILTER para sincronização automática com a aba Dados do site. | Não | evidencias/base-dados-clube-numeros.png | Nathália Salema Quintanilha | Preparação dos dados para a página Clube em Números. |
+| Desenvolvimento | 09/11/2026 | 09/11/2026 | 8 | Implementação da seção de leitura atual na Home, com integração ao Google Sheets via Papa Parse, identificação automática do livro do mês, tratamento de carregamento e erros, inclusão de links para Telegram e Maratona, estilização CSS, ajustes de responsividade e testes visuais. | N | [Evidência 11 — Leitura atual](evidencias/leitura-atual.png) | Nathália Salema Quintanilha | Integração de dados e refinamento da interface inicial. |
+| Desenvolvimento | 09/11/2026 | 09/11/2026 | 3 | Organização e classificação de 45 livros por gênero literário, país de origem, idioma original e gênero do autor. Ampliação da base de dados no Google Sheets e atualização da fórmula FILTER para sincronização automática com a aba Dados do site. | N | [Evidência 12 — Base de dados do Clube em Números](evidencias/base-dados-clube-numeros.png) | Nathália Salema Quintanilha | Preparação dos dados para a página Clube em Números. |
+| Desenvolvimento | 10/11/2026 | 12/11/2026 | 36 | Desenvolvimento da página Clube em Números com React, Recharts e CSS; integração dos dados do Google Sheets; implementação de indicadores, seis gráficos estatísticos, filtros e seção Os queridinhos do clube. Experimentação de diferentes visualizações, ajustes de alinhamento, legibilidade, organização dos cards, rolagem horizontal e responsividade. Comparação da identidade visual das páginas e reformulação do JSX e CSS da página Sobre, incluindo paleta de cores, fundo, títulos, ícones, cards, botões e espaçamentos. Realização de testes e correções visuais no navegador. | N | [Evidência 13 — Dashboard e refinamento visual](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2) | Nathália Salema Quintanilha | Total de 36 horas informado para o período de terça a quinta. Implementação, testes, experimentação e padronização visual registrados no GitHub. |
 
-**TOTAL DE HORAS DECLARADAS: 44 h**
+**TOTAL DE HORAS DECLARADAS: 80 h**
 
 ---
 
@@ -34,12 +35,13 @@
 | Etapa | Horas | % do total |
 |---|---:|---:|
 | Prospecção | 0 | 0% |
-| Requisitos | 3 | 7,50% |
-| Planejamento/design | 4 | 10,00% |
-| Desenvolvimento | 36,5 | 82,56% |
-| Testes | 0,5 | 1,25% |
+| Requisitos | 3 | 3,75% |
+| Planejamento/design | 4 | 5,00% |
+| Desenvolvimento | 72,5 | 90,63% |
+| Testes | 0,5 | 0,62% |
 | Entrega/implantação | 0 | 0% |
-| **TOTAL** | **44** | **100%** |
+| **TOTAL** | **80** | **100%** |
+
 ---
 
 ## Índice de evidências
@@ -236,7 +238,7 @@ Foram realizados testes de responsividade no navegador, verificando a exibição
 
 Desenvolvimento da página Sobre do site Clube do Livro da Bia, utilizando React, JavaScript e CSS, com o objetivo de apresentar a história do clube, seu funcionamento, as formas de participação e informações sobre sua idealizadora, Beatriz Costa.
 
-A implementação incluiu a criação de seções para apresentação do clube explicação das etapas de escolha e leitura dos livros, convite para participação no grupo do Telegram e apresentação da dona do clube.
+A implementação incluiu a criação de seções para apresentação do clube, explicação das etapas de escolha e leitura dos livros, convite para participação no grupo do Telegram e apresentação da dona do clube.
 
 Também foram incorporados quatro vídeos do YouTube, permitindo a reprodução diretamente na página, além de links para as redes sociais da Beatriz, utilizando ícones das bibliotecas Lucide React e React Icons.
 
@@ -245,6 +247,7 @@ Durante o desenvolvimento, foram elaboradas e testadas diferentes versões do la
 Também foi realizada uma tentativa de implementar um carrossel de vídeos. Durante essa atividade, surgiram dificuldades relacionadas à importação e à organização do componente no projeto. A implementação foi descartada da versão atual, sendo substituída por uma grade de vídeos incorporados.
 
 **Observação:**
+
 A tentativa de implementação do carrossel foi mantida como registro do processo de experimentação técnica, embora a funcionalidade não faça parte da versão final dessa etapa.
 
 ---
@@ -267,7 +270,6 @@ A reunião permitiu compartilhar os resultados alcançados, discutir as necessid
 
 Também foram fornecidas as informações referentes ao livro e à avaliação do mês, que serão utilizadas para atualizar os dados apresentados na página Nossa Estante.
 
-
 **Imagem:**
 
 ![Reunião de acompanhamento com Beatriz Costa e participantes do clube](evidencias/encontro-clube-08-11.png)
@@ -275,7 +277,6 @@ Também foram fornecidas as informações referentes ao livro e à avaliação d
 **Observação:**
 
 A inclusão do livro e da avaliação do mês na plataforma será realizada em uma atividade posterior.
-
 
 ---
 
@@ -302,3 +303,71 @@ Também foram realizados refinamentos no banner principal da Home, incluindo a r
 ![Seção de leitura atual na página inicial](evidencias/leitura-atual.png)
 
 **Observação:** O título e a capa da leitura atual são obtidos automaticamente da planilha. A automatização do link da leitura coletiva no Maratona será feita em uma próxima etapa.
+
+---
+
+### Evidência 12 — Preparação da base de dados para o Clube em Números
+
+**Data:** 09/11/2026
+
+**Etapa relacionada:** Desenvolvimento.
+
+**Duração:** 3 horas.
+
+**Descrição:**
+
+Organização, ampliação e classificação da base de dados do Clube do Livro da Bia para possibilitar a construção de gráficos e indicadores estatísticos na página Clube em Números.
+
+Foram organizados 45 registros de livros na planilha do Google Sheets, com revisão e preenchimento de informações sobre gênero literário, país de origem, idioma original e gênero do autor.
+
+A atividade envolveu a pesquisa e a conferência das classificações dos livros, a padronização dos dados e a atualização da fórmula FILTER, responsável por sincronizar os registros com a aba Dados do site.
+
+A estruturação dessas informações permitiu preparar a base para o cálculo de médias de avaliações e para a visualização da diversidade de gêneros, países, idiomas e autoria das leituras realizadas pelo clube.
+
+**Imagem:**
+
+![Base de dados do Clube em Números](evidencias/base-dados-clube-numeros.png)
+
+
+---
+
+### Evidência 13 — Desenvolvimento do Clube em Números e padronização visual do site
+
+**Período:** 10/11/2026 a 12/11/2026
+
+**Etapa relacionada:** Desenvolvimento, incluindo experimentação, testes e refinamento visual.
+
+**Duração:** 36 horas no período.
+
+**Descrição:**
+
+Desenvolvimento da página Clube em Números do projeto Clube do Livro da Bia, utilizando React, JavaScript, CSS e a biblioteca Recharts, com o objetivo de apresentar estatísticas e informações sobre as leituras realizadas pela comunidade.
+
+A implementação incluiu a integração com a base de dados publicada no Google Sheets em formato CSV, aproveitando as informações organizadas anteriormente para gerar indicadores e gráficos dinâmicos.
+
+Foram desenvolvidos quatro indicadores principais, apresentando a quantidade de livros registrados, a média das avaliações, o número de países de origem dos livros e o gênero literário mais frequente.
+
+Também foram implementadas seis visualizações estatísticas:
+
+- Distribuição dos livros por gênero literário.
+- Média das avaliações por gênero literário.
+- Distribuição dos livros conforme o gênero dos autores.
+- Países de origem das obras.
+- Idiomas originais dos livros.
+- Evolução da média das avaliações por ano.
+
+Durante o desenvolvimento, foram realizados ajustes nas dimensões, nas cores, nos rótulos, nos espaçamentos e na organização dos gráficos para melhorar a leitura das informações e manter a identidade visual do site.
+
+A visualização dos países de origem passou por diferentes tentativas de apresentação. Foram experimentadas alternativas para melhorar a legibilidade e a exibição dos países, incluindo mudanças na disposição das barras e no espaço ocupado pelo gráfico. Após comparação dos resultados, algumas alterações foram revertidas por não atenderem à proposta visual desejada.
+
+Após o desenvolvimento do dashboard, foi realizada uma análise comparativa da identidade visual das páginas Início, Nossa Estante, Clube em Números e Sobre.
+
+Em seguida, foram realizados ajustes no JSX e no CSS da página Sobre.
+Durante esse processo, foram realizados testes visuais no navegador e comparações entre as páginas para avaliar a consistência da interface.
+
+
+**Evidência:**
+
+[Visualizar commit do dashboard e dos ajustes visuais no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2)
+
+
