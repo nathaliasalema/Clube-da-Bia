@@ -25,8 +25,7 @@
 | Desenvolvimento | 09/11/2026 | 09/11/2026 | 8 | Implementação da seção de leitura atual na Home, com integração ao Google Sheets via Papa Parse, identificação automática do livro do mês, tratamento de carregamento e erros, inclusão de links para Telegram e Maratona, estilização CSS, ajustes de responsividade e testes visuais. | N | [Evidência 11 — Leitura atual](evidencias/leitura-atual.png) | Nathália Salema Quintanilha | Integração de dados e refinamento da interface inicial. |
 | Desenvolvimento | 09/11/2026 | 09/11/2026 | 3 | Organização e classificação de 45 livros por gênero literário, país de origem, idioma original e gênero do autor. Ampliação da base de dados no Google Sheets e atualização da fórmula FILTER para sincronização automática com a aba Dados do site. | N | [Evidência 12 — Base de dados do Clube em Números](evidencias/base-dados-clube-numeros.png) | Nathália Salema Quintanilha | Preparação dos dados para a página Clube em Números. |
 | Desenvolvimento | 10/11/2026 | 12/11/2026 | 36 | Desenvolvimento da página Clube em Números com React, Recharts e CSS; integração dos dados do Google Sheets; implementação de indicadores, seis gráficos estatísticos, filtros e seção Os queridinhos do clube. Experimentação de diferentes visualizações, ajustes de alinhamento, legibilidade, organização dos cards, rolagem horizontal e responsividade. Comparação da identidade visual das páginas e reformulação do JSX e CSS da página Sobre, incluindo paleta de cores, fundo, títulos, ícones, cards, botões e espaçamentos. Realização de testes e correções visuais no navegador. | N | [Evidência 13 — Dashboard e refinamento visual](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2) | Nathália Salema Quintanilha | Total de 36 horas informado para o período de terça a quinta. Implementação, testes, experimentação e padronização visual registrados no GitHub. |
-
-**TOTAL DE HORAS DECLARADAS: 80 h**
+| Planejamento/design e Desenvolvimento | 13/11/2026 | 16/11/2026 | 40 | Planejamento e desenvolvimento da primeira versão da página Prêmios, destinada ao LOTY Awards 2026. Definição das cinco categorias da premiação, regras de participação e fluxo de votação. Estudo e implementação da interface com React, JavaScript e CSS, incluindo identificação dos participantes, seleção de livros por categoria, navegação entre etapas, possibilidade de pular categorias e revisão das escolhas. Integração com o Google Sheets para carregamento automático dos livros de 2026, criação de cards interativos, barra de progresso e estrutura visual da tela de resultados. Ajustes de layout, identidade visual e responsividade. | N | [Evidência 14 — Página Prêmios e LOTY Awards 2026](https://github.com/nathaliasalema/Clube-da-Bia/commit/59a26bd343d62bffad0fa643e844cfe028c32b04) | Nathália Salema Quintanilha | Total de 40 horas informado para o período de sexta a segunda-feira, incluindo planejamento, estudo e desenvolvimento. A interface de votação foi estruturada, mas o registro efetivo dos votos, o controle de duplicidade e a apresentação de resultados reais ainda dependem da integração com o Google Apps Script que será feito posteriormente. |
 
 ---
 
@@ -34,13 +33,13 @@
 
 | Etapa | Horas | % do total |
 |---|---:|---:|
-| Prospecção | 0 | 0% |
-| Requisitos | 3 | 3,75% |
-| Planejamento/design | 4 | 5,00% |
-| Desenvolvimento | 72,5 | 90,63% |
-| Testes | 0,5 | 0,62% |
-| Entrega/implantação | 0 | 0% |
-| **TOTAL** | **80** | **100%** |
+| Prospecção | 0 | 0,00% |
+| Requisitos | 3 | 2,50% |
+| Planejamento/design | 12 | 10,00% |
+| Desenvolvimento | 104,5 | 87,08% |
+| Testes | 0,5 | 0,42% |
+| Entrega/implantação | 0 | 0,00% |
+| **TOTAL** | **120** | **100,00%** |
 
 ---
 
@@ -371,3 +370,33 @@ Durante esse processo, foram realizados testes visuais no navegador e comparaç�
 [Visualizar commit do dashboard e dos ajustes visuais no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2)
 
 
+### Evidência 14 — Desenvolvimento da página Prêmios e estrutura do LOTY Awards 2026
+**Período: 13/11/2026 a 16/11/2026**
+
+Etapas relacionadas: Planejamento/design e Desenvolvimento, incluindo estudo, experimentação e estruturação da interface.
+
+Duração: 40 horas no período.
+
+Descrição:
+Planejamento e desenvolvimento da primeira versão da página Prêmios do projeto Clube do Livro da Bia, premiação anual para reconhecer os livros que mais se destacaram entre as leituras realizadas pela comunidade.
+
+A atividade envolveu o estudo e a definição da experiência de participação, incluindo a escolha de cinco categorias: Livro do Ano (LOTY), Pior Livro do Ano, Livro que Mais Emocionou, Maior Plot Twist e Maior Surpresa do Ano.
+
+Foi planejado um sistema de votação organizado em etapas, no qual cada participante informa nome e sobrenome e seleciona um livro por categoria. A interface permite avançar e retornar entre as etapas, deixar categorias sem voto e revisar as escolhas antes da confirmação.
+
+No desenvolvimento da aplicação com React, JavaScript e CSS, foram realizadas as seguintes implementações:
+- Criação da página Premios.jsx e do arquivo de estilização Premios.css.
+- Inclusão da rota /premios no React Router e atualização do menu de navegação.
+- Criação de cards interativos com capas, títulos e autores dos livros.
+- Integração com a base de leituras publicada no Google Sheets, utilizando Fetch API e Papa Parse para carregar os livros de 2026.
+- Implementação de estados React para controlar identificação, seleção de livros, navegação entre categorias e revisão dos votos.
+- Desenvolvimento de barra de progresso e mensagens de orientação ao participante.
+- Estruturação da tela de resultados, preparada para apresentar rankings, quantidade de votos e porcentagens por categoria.
+- Aplicação da identidade visual do clube, com tons de rosa, ameixa e dourado, além de regras CSS para adaptação a diferentes tamanhos de tela.
+A atividade também compreendeu o planejamento das regras para participação, incluindo a proposta de permitir apenas uma votação por nome completo, e a organização da futura integração com Google Apps Script.
+
+Situação da implementação: a interface e o fluxo de seleção foram desenvolvidos. O registro efetivo dos votos, a verificação de duplicidade e a apresentação de resultados reais permanecem pendentes de integração com o sistema de armazenamento.
+
+Evidência:
+
+[Visualizar commit da página Prêmios e do LOTY Awards no GitHub] https://github.com/nathaliasalema/Clube-da-Bia/commit/59a26bd343d62bffad0fa643e844cfe028c32b04#diff-4380f23945d2ff7ea89e5fe50c4c127e1cb259cc731e5bc8c4e77b11d559deec
