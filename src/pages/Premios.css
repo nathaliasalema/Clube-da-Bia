@@ -758,3 +758,83 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Ano único: visual sem menu suspenso */
+
+.premios-ano-unico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 12px 0 20px;
+  padding: 13px 25px;
+
+  border: 1px solid #f4c9da;
+  border-radius: 14px;
+
+  background: #fff8fb;
+  color: #63334f;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.premios-ano-unico svg {
+  color: #ec3778;
+}
+
+
+/* LOTY Awards — ajustes de espaçamento */
+
+/* Aproxima o ano dos botões */
+.premios-ano-unico {
+  margin: 8px 0 4px;
+}
+
+/* Ajusta a distância entre os botões */
+.premios-centralizado > .premios-navegacao {
+  margin-top: 14px;
+  gap: 14px;
+}
+
+/* Organiza o título e a descrição dos resultados */
+.premios-resultados-cabecalho {
+  margin-bottom: 28px;
+}
+
+.premios-resultados-cabecalho p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a16b82;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Respiro antes do primeiro card de resultados */
+.premios-resultados-cabecalho + .premios-resultados {
+  margin-top: 22px;
+}
+
+/* Mais espaço entre a frase e o ano */
+.premios-ano-unico {
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+
+/* Espaço entre os cards principais */
+.premios-selecao-edicao {
+  margin-bottom: 24px;
+}
+
+
+/* Separação entre o seletor de edição e o conteúdo */
+
+.premios-selecao-edicao {
+  margin-bottom: 36px !important;
+}
+
+/* Evita que o card seguinte fique colado */
+.premios-selecao-edicao + .premios-painel {
+  margin-top: 0 !important;
+}

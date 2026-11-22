@@ -2,36 +2,28 @@
 import { useEffect, useMemo, useState } from 'react'
 import Papa from 'papaparse'
 import {
-  ArrowLeft,
-  ArrowRight,
-  BookHeart,
-  Check,
-  CheckCircle2,
-  Heart,
-  LoaderCircle,
-  PartyPopper,
-  Sparkles,
-  Trophy
+  ArrowLeft, ArrowRight, BookHeart, Check,
+  CheckCircle2, Heart, LoaderCircle,
+  PartyPopper, Sparkles, Trophy
 } from 'lucide-react'
 import './Premios.css'
 
 const PLANILHA_LIVROS =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3kpBfZlGs7DosCsSz5t8uVhbxvFO9LZ553bHPACLCLQtwoniPoroV2viT-tlvvJDgvkazqS2tpCCn/pub?gid=1392192016&single=true&output=csv'
 
-// Futuramente colocarei aqui a URL do Apps Script
-const API_VOTOS = ''
+const API_VOTOS =
+  'https://script.google.com/macros/s/AKfycbwPQ19QhmZpvYP0DHbjlm96zxqV5rttE0WYEziJQRn7Qe4qYPFTETz5KPnG9kUNW4IC/exec'
 
-// Enquanto for false, a página funciona como prévia.
-// O envio de votos reais fica bloqueado.
-const VOTACAO_ABERTA = false
+const ANO_INICIAL = 2026
+const MINIMO_LIVROS = 12
+const INTERVALO_ATUALIZACAO = 30000
 
 const CATEGORIAS = [
   {
     id: 'livro-do-ano',
     titulo: 'Livro do Ano',
-    apelido: 'LOTY',
     emoji: '🏆',
-    descricao: 'Qual foi o seu livro favorito de 2026?'
+    descricao: 'Qual foi o seu livro favorito do ano?'
   },
   {
     id: 'pior-livro',
@@ -42,7 +34,7 @@ const CATEGORIAS = [
   {
     id: 'mais-emocionante',
     titulo: 'Livro que Mais Emocionou',
-    emoji: '🥹',
+    emoji: '😭',
     descricao: 'Qual história mais mexeu com você?'
   },
   {
@@ -59,10 +51,50 @@ const CATEGORIAS = [
   }
 ]
 
-const TOTAL_ETAPAS = CATEGORIAS.length + 2
+function dataBrasilia() {
+  const partes = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Sao_Paulo',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric'
+  }).formatToParts(new Date())
+
+  const valores = Object.fromEntries(
+    partes.map(parte => [parte.type, Number(parte.value)])
+  )
+
+  return {
+    ano: valores.year,
+    mes: valores.month,
+    dia: valores.day
+  }
+}
+
+function anoEdicaoAtual() {
+  const data = dataBrasilia()
+
+  if (data.mes === 1 && data.dia <= 10) {
+    return Math.max(ANO_INICIAL, data.ano - 1)
+  }
+
+  return Math.max(ANO_INICIAL, data.ano)
+}
+
+function prazoEncerrado(ano) {
+  const data = dataBrasilia()
+
+  if (data.ano > ano + 1) return true
+
+  if (data.ano === ano + 1) {
+    return data.mes > 1 ||
+      (data.mes === 1 && data.dia > 10)
+  }
+
+  return false
+}
 
 function limparTexto(valor) {
-  return String(valor || '').trim()
+  return String(valor ?? '').trim()
 }
 
 function criarIdLivro(ano, mes, titulo) {
@@ -77,19 +109,19 @@ function criarIdLivro(ano, mes, titulo) {
     .join('|')
 }
 
-function normalizarLivros(csv) {
-  const resultado = Papa.parse(csv, {
+function normalizarLivros(csv, ano) {
+  const dados = Papa.parse(csv, {
     header: true,
     skipEmptyLines: true,
     transformHeader: titulo => titulo.trim()
   })
 
-  if (resultado.errors.length && !resultado.data.length) {
-    throw new Error('Não foi possível interpretar a planilha.')
+  if (dados.errors.length && !dados.data.length) {
+    throw new Error('Não foi possível ler a planilha.')
   }
 
-  const livros = resultado.data
-    .filter(linha => limparTexto(linha.Ano) === '2026')
+  const livros = dados.data
+    .filter(linha => limparTexto(linha.Ano) === String(ano))
     .filter(linha => limparTexto(linha.Título))
     .map(linha => ({
       id: criarIdLivro(
@@ -99,12 +131,14 @@ function normalizarLivros(csv) {
       ),
       titulo: limparTexto(linha.Título),
       autor: limparTexto(linha.Autor),
-      mes: limparTexto(linha.Mês),
       capa: limparTexto(linha['URL da capa'])
     }))
 
-  // Evita duplicatas caso a planilha tenha linhas repetidas.
-  return [...new Map(livros.map(livro => [livro.id, livro])).values()]
+  return [
+    ...new Map(
+      livros.map(livro => [livro.id, livro])
+    ).values()
+  ]
 }
 
 function CapaLivro({ livro }) {
@@ -117,7 +151,7 @@ function CapaLivro({ livro }) {
   if (!livro.capa || falhou) {
     return (
       <div className="premios-capa-vazia">
-        <BookHeart size={34} aria-hidden="true" />
+        <BookHeart size={34} />
         <span>Clube da Bia</span>
       </div>
     )
@@ -148,7 +182,7 @@ function CardLivro({ livro, selecionado, onClick }) {
 
         {selecionado && (
           <span className="premios-livro-check">
-            <Check size={17} aria-hidden="true" />
+            <Check size={17} />
           </span>
         )}
       </div>
@@ -164,55 +198,110 @@ function CardLivro({ livro, selecionado, onClick }) {
   )
 }
 
+function PainelResultados({ resultados, categorias, livrosPorId }) {
+  if (!resultados) {
+    return (
+      <p>Os resultados ainda não estão disponíveis.</p>
+    )
+  }
+
+  return (
+    <div className="premios-resultados">
+      {categorias.map(categoria => {
+        const itens = resultados[categoria.id] || []
+
+        const total = itens.reduce(
+          (soma, item) => soma + Number(item.votos || 0),
+          0
+        )
+
+        return (
+          <article
+            className="premios-resultado-categoria"
+            key={categoria.id}
+          >
+            <h4>
+              {categoria.emoji} {categoria.titulo}
+            </h4>
+
+            {total === 0 ? (
+              <p>Ainda não há votos nesta categoria.</p>
+            ) : (
+              [...itens]
+                .sort((a, b) => Number(b.votos) - Number(a.votos))
+                .map((item, indice) => {
+                  const porcentagem =
+                    (Number(item.votos) / total) * 100
+
+                  return (
+                    <div
+                      className="premios-ranking-item"
+                      key={item.livroId}
+                    >
+                      <div className="premios-ranking-info">
+                        <span>
+                          {indice === 0 ? '🥇 ' : ''}
+                          {livrosPorId.get(item.livroId)?.titulo ||
+                            item.titulo}
+                        </span>
+
+                        <strong>
+                          {porcentagem.toFixed(1)}%
+                        </strong>
+                      </div>
+
+                      <div className="premios-barra">
+                        <div
+                          style={{ width: `${porcentagem}%` }}
+                        />
+                      </div>
+
+                      <small>
+                        {item.votos}{' '}
+                        {Number(item.votos) === 1
+                          ? 'voto'
+                          : 'votos'}
+                      </small>
+                    </div>
+                  )
+                })
+            )}
+          </article>
+        )
+      })}
+    </div>
+  )
+}
+
 function Premios() {
+  const [anoAtual, setAnoAtual] = useState(anoEdicaoAtual)
+  const [anoSelecionado, setAnoSelecionado] = useState(anoEdicaoAtual)
+
   const [livros, setLivros] = useState([])
   const [carregando, setCarregando] = useState(true)
   const [erroLivros, setErroLivros] = useState('')
 
+  const [statusVotacao, setStatusVotacao] = useState(null)
+  const [resultadosPublicos, setResultadosPublicos] = useState(null)
+  const [erroAPI, setErroAPI] = useState('')
+
+  const [mostrarResultados, setMostrarResultados] = useState(false)
   const [etapa, setEtapa] = useState(-1)
+
   const [nome, setNome] = useState('')
   const [sobrenome, setSobrenome] = useState('')
   const [votos, setVotos] = useState({})
+
   const [enviando, setEnviando] = useState(false)
   const [erroEnvio, setErroEnvio] = useState('')
   const [resultado, setResultado] = useState(null)
 
-  useEffect(() => {
-    let ativo = true
+  const edicaoAtual = anoSelecionado === anoAtual
 
-    async function buscarLivros() {
-      try {
-        const resposta = await fetch(PLANILHA_LIVROS)
-
-        if (!resposta.ok) {
-          throw new Error('Falha ao buscar a planilha.')
-        }
-
-        const csv = await resposta.text()
-        const lista = normalizarLivros(csv)
-
-        if (ativo) {
-          setLivros(lista)
-        }
-      } catch (erro) {
-        if (ativo) {
-          setErroLivros(
-            'Não conseguimos carregar os livros agora. Tente atualizar a página.'
-          )
-        }
-      } finally {
-        if (ativo) {
-          setCarregando(false)
-        }
-      }
-    }
-
-    buscarLivros()
-
-    return () => {
-      ativo = false
-    }
-  }, [])
+  const votacaoAberta =
+    edicaoAtual &&
+    statusVotacao?.aberta === true &&
+    !prazoEncerrado(anoSelecionado)
 
   const livrosPorId = useMemo(
     () => new Map(livros.map(livro => [livro.id, livro])),
@@ -231,9 +320,135 @@ function Premios() {
     nome.trim().length >= 2 &&
     sobrenome.trim().length >= 2
 
-  const progresso = Math.round(
-    ((etapa + 1) / TOTAL_ETAPAS) * 100
-  )
+  useEffect(() => {
+    const intervalo = window.setInterval(() => {
+      const novoAno = anoEdicaoAtual()
+
+      setAnoAtual(novoAno)
+    }, 60000)
+
+    return () => window.clearInterval(intervalo)
+  }, [])
+
+  useEffect(() => {
+    let ativo = true
+
+    setCarregando(true)
+    setErroLivros('')
+    setLivros([])
+
+    async function buscarLivros() {
+      try {
+        const resposta = await fetch(PLANILHA_LIVROS)
+
+        if (!resposta.ok) {
+          throw new Error('Falha ao consultar a estante.')
+        }
+
+        const csv = await resposta.text()
+        const lista = normalizarLivros(csv, anoSelecionado)
+
+        if (ativo) setLivros(lista)
+      } catch (erro) {
+        if (ativo) {
+          setErroLivros(
+            'Não foi possível carregar os livros.'
+          )
+        }
+      } finally {
+        if (ativo) setCarregando(false)
+      }
+    }
+
+    buscarLivros()
+
+    return () => {
+      ativo = false
+    }
+  }, [anoSelecionado])
+
+  useEffect(() => {
+    let ativo = true
+
+    setStatusVotacao(null)
+    setResultadosPublicos(null)
+    setErroAPI('')
+
+    async function consultarAPI() {
+      try {
+        const url =
+          `${API_VOTOS}?ano=${anoSelecionado}&t=${Date.now()}`
+
+        const resposta = await fetch(url, {
+          cache: 'no-store'
+        })
+
+        if (!resposta.ok) {
+          throw new Error('Falha ao consultar a API.')
+        }
+
+        const dados = await resposta.json()
+
+        if (!dados.sucesso) {
+          throw new Error(
+            dados.mensagem || 'Erro ao consultar a API.'
+          )
+        }
+
+        if (ativo) {
+          setStatusVotacao(dados.status)
+          setResultadosPublicos(dados.resultados)
+          setErroAPI('')
+        }
+      } catch (erro) {
+        if (ativo) {
+          setStatusVotacao(null)
+          setErroAPI(
+            'Não foi possível consultar a votação agora.'
+          )
+        }
+      }
+    }
+
+    consultarAPI()
+
+    const intervalo = window.setInterval(
+      consultarAPI,
+      INTERVALO_ATUALIZACAO
+    )
+
+    return () => {
+      ativo = false
+      window.clearInterval(intervalo)
+    }
+  }, [anoSelecionado])
+
+  function mudarAno(ano) {
+    setAnoSelecionado(ano)
+    setMostrarResultados(true)
+    setEtapa(-1)
+    setVotos({})
+    setResultado(null)
+    setErroEnvio('')
+  }
+
+  function avancar() {
+    setErroEnvio('')
+
+    setEtapa(atual =>
+      Math.min(atual + 1, CATEGORIAS.length)
+    )
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function voltar() {
+    setErroEnvio('')
+
+    setEtapa(atual => Math.max(atual - 1, -1))
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   function escolherLivro(categoriaId, livroId) {
     setVotos(anteriores => ({
@@ -242,28 +457,21 @@ function Premios() {
     }))
   }
 
-  function avancar() {
-    setErroEnvio('')
-    setEtapa(atual => Math.min(atual + 1, CATEGORIAS.length))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  function voltar() {
-    setErroEnvio('')
-    setEtapa(atual => Math.max(atual - 1, -1))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   async function confirmarVotos() {
     if (!nomeValido) {
-      setErroEnvio('Informe seu nome e sobrenome.')
+      setErroEnvio('Informe nome e sobrenome.')
       return
     }
 
-    if (!VOTACAO_ABERTA || !API_VOTOS) {
+    if (!votacaoAberta) {
       setErroEnvio(
-        'A votação ainda não está aberta. Esta é uma prévia da página.'
+        'A votação não está aberta ou o prazo terminou.'
       )
+      return
+    }
+
+    if (!Object.values(votos).some(Boolean)) {
+      setErroEnvio('Selecione pelo menos um livro.')
       return
     }
 
@@ -273,10 +481,9 @@ function Premios() {
     try {
       const dados = new URLSearchParams()
 
-      dados.set('acao', 'votar')
       dados.set('nome', nome.trim())
       dados.set('sobrenome', sobrenome.trim())
-      dados.set('ano', '2026')
+      dados.set('ano', String(anoSelecionado))
       dados.set('votos', JSON.stringify(votos))
 
       const resposta = await fetch(API_VOTOS, {
@@ -285,7 +492,7 @@ function Premios() {
       })
 
       if (!resposta.ok) {
-        throw new Error('Não foi possível registrar os votos.')
+        throw new Error('Não foi possível enviar os votos.')
       }
 
       const dadosResposta = await resposta.json()
@@ -297,14 +504,15 @@ function Premios() {
         )
       }
 
-      // O backend deverá devolver os resultados oficiais.
       setResultado(dadosResposta.resultados)
+      setResultadosPublicos(dadosResposta.resultados)
       setEtapa(CATEGORIAS.length + 1)
+
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } catch (erro) {
       setErroEnvio(
         erro.message ||
-        'Ocorreu um erro. Tente novamente.'
+        'Ocorreu um erro ao enviar os votos.'
       )
     } finally {
       setEnviando(false)
@@ -317,7 +525,7 @@ function Premios() {
 
         <section className="premios-hero">
           <span className="premios-etiqueta">
-            ✦ PRIMEIRA EDIÇÃO ✦
+            ✦ PREMIAÇÃO ANUAL ✦
           </span>
 
           <div className="premios-trofeu">
@@ -325,7 +533,7 @@ function Premios() {
           </div>
 
           <h1>
-            LOTY <span>Awards 2026</span>
+            LOTY <span>Awards {anoSelecionado}</span>
           </h1>
 
           <p>
@@ -336,16 +544,112 @@ function Premios() {
           <div className="premios-hero-detalhes">
             <span>5 categorias</span>
             <span aria-hidden="true">✦</span>
-            <span>12 leituras previstas</span>
-            <span aria-hidden="true">✦</span>
-            <span>1 clube apaixonado</span>
+            <span>{MINIMO_LIVROS} leituras</span>
+            <span aria-hidden="true"></span>
+            
           </div>
         </section>
 
-        {carregando ? (
+        <section className="premios-painel premios-selecao-edicao">
+          <div className="premios-centralizado">
+            <h2>Escolha a edição ♡</h2>
+
+            <p>
+              Consulte os resultados de outros anos
+              ou participe da edição atual.
+            </p>
+
+            {anoAtual === ANO_INICIAL ? (
+  <div className="premios-ano-unico">
+    <Trophy size={17} />
+    <span>{anoSelecionado}</span>
+  </div>
+) : (
+  <div className="premios-seletor-ano">
+    <select
+      id="premios-ano"
+      value={anoSelecionado}
+      onChange={evento =>
+        mudarAno(Number(evento.target.value))
+      }
+      aria-label="Selecionar ano da premiação"
+    >
+      {Array.from(
+        { length: anoAtual - ANO_INICIAL + 1 },
+        (_, indice) => ANO_INICIAL + indice
+      ).reverse().map(ano => (
+        <option key={ano} value={ano}>
+          {ano}
+        </option>
+      ))}
+    </select>
+  </div>
+)}
+
+            <div className="premios-navegacao">
+              <button
+                type="button"
+                className="premios-botao-principal"
+                onClick={() => {
+                  setMostrarResultados(true)
+                  setEtapa(-1)
+                }}
+              >
+                Ver resultados
+                <Trophy size={18} />
+              </button>
+
+              {edicaoAtual && (
+                <button
+                  type="button"
+                  className="premios-botao-voltar"
+                  onClick={() => {
+                    setMostrarResultados(false)
+                    setEtapa(-1)
+                  }}
+                >
+                  Participar da votação
+                </button>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {erroAPI && (
+          <p className="premios-erro" role="alert">
+            {erroAPI}
+          </p>
+        )}
+
+        {mostrarResultados || !edicaoAtual ? (
+          <section className="premios-painel">
+            
+<div className="premios-centralizado premios-resultados-cabecalho">
+  <Trophy size={40} color="#ec3778" />
+
+  <h2>
+    Resultados do LOTY Awards {anoSelecionado}
+  </h2>
+
+  <p>
+    Resultados atualizados a cada 30 segundos.
+  </p>
+</div>
+
+
+            <PainelResultados
+              resultados={resultadosPublicos}
+              categorias={CATEGORIAS}
+              livrosPorId={livrosPorId}
+            />
+          </section>
+        ) : carregando ? (
           <section className="premios-painel premios-centralizado">
-            <LoaderCircle className="premios-girando" size={30} />
-            <p>Preparando os livros para a premiação...</p>
+            <LoaderCircle
+              className="premios-girando"
+              size={30}
+            />
+            <p>Preparando os livros da premiação...</p>
           </section>
         ) : erroLivros ? (
           <section className="premios-painel premios-centralizado">
@@ -361,9 +665,9 @@ function Premios() {
             <h2>Quem merece levar o troféu?</h2>
 
             <p className="premios-texto">
-              Você vai escolher seus favoritos em cinco
-              categorias. É uma categoria por vez,
-              sem pressa e com muito amor pelos livros!
+              Escolha seus livros favoritos em cinco
+              categorias. Você pode deixar alguma
+              categoria sem voto.
             </p>
 
             <div className="premios-categorias-resumo">
@@ -412,120 +716,66 @@ function Premios() {
               </div>
 
               <p className="premios-aviso">
-                Seu nome será usado apenas para evitar
-                votos duplicados. Ele não aparecerá
-                publicamente nos resultados.
+                Seu nome será utilizado para verificar
+                votos duplicados e não será exibido
+                nos resultados públicos.
               </p>
             </div>
 
             <div className="premios-status">
-              {livros.length} livros de 2026 encontrados
-              na nossa estante.
-              {livros.length < 12 &&
-                ' A lista será atualizada quando os próximos livros forem adicionados.'}
+              {livros.length} livros de {anoSelecionado}
+              {' '}encontrados na nossa estante.
             </div>
+
+            <p className="premios-aviso">
+              A votação abre automaticamente ao atingir
+              {` ${MINIMO_LIVROS} livros`} e encerra
+              em 10/01/{anoSelecionado + 1},
+              às 23h59, horário de Brasília.
+            </p>
 
             <button
               type="button"
               className="premios-botao-principal"
               onClick={avancar}
-              disabled={!nomeValido || livros.length === 0}
+              disabled={
+                !nomeValido ||
+                !votacaoAberta ||
+                livros.length === 0
+              }
             >
               Começar a votação
               <ArrowRight size={18} />
             </button>
 
-            {!VOTACAO_ABERTA && (
+            {!votacaoAberta && (
               <p className="premios-previa">
-                ✨ Estamos preparando a primeira edição.
-                Você pode explorar as categorias, mas
-                os votos ainda não serão enviados.
+                {prazoEncerrado(anoSelecionado)
+                  ? 'A votação desta edição foi encerrada.'
+                  : 'A votação ainda não está disponível.'}
               </p>
             )}
           </section>
         ) : etapaResultado ? (
-          <section className="premios-painel premios-resultados">
+          <section className="premios-painel">
             <div className="premios-centralizado">
               <PartyPopper size={43} color="#ec3778" />
 
               <h2>Seus votos foram registrados! ♡</h2>
 
               <p>
-                Obrigada por participar do LOTY Awards 2026!
+                Obrigada por participar do LOTY Awards
+                {' '}{anoSelecionado}!
               </p>
             </div>
 
             <h3>Resultados da votação</h3>
 
-            {resultado ? (
-              CATEGORIAS.map(categoria => {
-                const itens = resultado[categoria.id] || []
-                const total = itens.reduce(
-                  (soma, item) => soma + Number(item.votos || 0),
-                  0
-                )
-
-                return (
-                  <article
-                    className="premios-resultado-categoria"
-                    key={categoria.id}
-                  >
-                    <h4>
-                      {categoria.emoji} {categoria.titulo}
-                    </h4>
-
-                    {total === 0 ? (
-                      <p>Ainda não há votos nesta categoria.</p>
-                    ) : (
-                      [...itens]
-                        .sort((a, b) => b.votos - a.votos)
-                        .map((item, indice) => {
-                          const porcentagem =
-                            (Number(item.votos) / total) * 100
-
-                          return (
-                            <div
-                              className="premios-ranking-item"
-                              key={item.livroId}
-                            >
-                              <div className="premios-ranking-info">
-                                <span>
-                                  {indice === 0 ? '🥇 ' : ''}
-                                  {livrosPorId.get(item.livroId)
-                                    ?.titulo || item.titulo}
-                                </span>
-
-                                <strong>
-                                  {porcentagem.toFixed(1)}%
-                                </strong>
-                              </div>
-
-                              <div className="premios-barra">
-                                <div
-                                  style={{
-                                    width: `${porcentagem}%`
-                                  }}
-                                />
-                              </div>
-
-                              <small>
-                                {item.votos}{' '}
-                                {Number(item.votos) === 1
-                                  ? 'voto'
-                                  : 'votos'}
-                              </small>
-                            </div>
-                          )
-                        })
-                    )}
-                  </article>
-                )
-              })
-            ) : (
-              <p>
-                Os resultados ainda não estão disponíveis.
-              </p>
-            )}
+            <PainelResultados
+              resultados={resultado}
+              categorias={CATEGORIAS}
+              livrosPorId={livrosPorId}
+            />
           </section>
         ) : (
           <section className="premios-painel">
@@ -539,7 +789,9 @@ function Premios() {
               <span>
                 {etapaRevisao
                   ? 'Quase lá!'
-                  : `${Math.min(progresso, 100)}%`}
+                  : `${Math.round(
+                      ((etapa + 1) / CATEGORIAS.length) * 100
+                    )}%`}
               </span>
             </div>
 
@@ -564,7 +816,6 @@ function Premios() {
                   </span>
 
                   <h2>{categoriaAtual.titulo}</h2>
-
                   <p>{categoriaAtual.descricao}</p>
                 </div>
 
@@ -608,13 +859,14 @@ function Premios() {
                   <h2>Vamos conferir seus votos?</h2>
 
                   <p>
-                    Confira suas escolhas antes de
-                    confirmar a participação.
+                    Confira suas escolhas antes
+                    de confirmar a participação.
                   </p>
                 </div>
 
                 <div className="premios-revisao-nome">
-                  Votação de <strong>{nome} {sobrenome}</strong>
+                  Votação de{' '}
+                  <strong>{nome} {sobrenome}</strong>
                 </div>
 
                 {CATEGORIAS.map((categoria, indice) => {
@@ -651,8 +903,7 @@ function Premios() {
 
                 <p className="premios-aviso">
                   Depois de confirmar, não será possível
-                  enviar uma segunda votação com o
-                  mesmo nome e sobrenome.
+                  votar novamente nesta edição.
                 </p>
               </div>
             ) : null}
@@ -681,8 +932,7 @@ function Premios() {
                   onClick={confirmarVotos}
                   disabled={
                     enviando ||
-                    !VOTACAO_ABERTA ||
-                    !API_VOTOS ||
+                    !votacaoAberta ||
                     !Object.values(votos).some(Boolean)
                   }
                 >
@@ -707,13 +957,6 @@ function Premios() {
                 </button>
               )}
             </div>
-
-            {etapaRevisao && !VOTACAO_ABERTA && (
-              <p className="premios-previa">
-                ✨ Esta é a prévia da votação.
-                O envio será liberado em breve
-              </p>
-            )}
           </section>
         )}
 
