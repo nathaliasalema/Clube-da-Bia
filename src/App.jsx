@@ -7,6 +7,8 @@ import NossaEstante from './pages/NossaEstante'
 import Sobre from './pages/Sobre'
 import ClubeEmNumeros from './pages/ClubeEmNumeros'
 import Premios from './pages/Premios'
+import Indicacao from './pages/Indicacao'
+
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/clube-em-numeros" element={<ClubeEmNumeros />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/premios" element={<Premios />} />
+        <Route path="/indicacao" element={<Indicacao />} />
+
       </Routes>
     </BrowserRouter>
   )

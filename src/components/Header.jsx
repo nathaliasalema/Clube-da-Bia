@@ -80,7 +80,7 @@ function Header() {
             Prêmios
           </Link>
 
-          <Link to="/#sugestoes" onClick={fecharMenu}>
+          <Link to="/indicacao" onClick={fecharMenu}>
             Indique um Livro
           </Link>
 

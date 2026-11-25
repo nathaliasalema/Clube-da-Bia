@@ -1,0 +1,271 @@
+.indicacao-page {
+  min-height: 100vh;
+  background: #fff5f8;
+  padding: 40px 20px 30px;
+  color: #583047;
+}
+
+.indicacao-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.indicacao-hero {
+  text-align: center;
+  padding: 35px 20px 40px;
+}
+
+.indicacao-etiqueta {
+  display: inline-block;
+  color: #d93675;
+  background: #ffe3ed;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.indicacao-icone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  margin: 22px auto;
+  border-radius: 50%;
+  background: #ffe3ed;
+  color: #ec3778;
+}
+
+.indicacao-hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 0 0 15px;
+  color: #583047;
+}
+
+.indicacao-hero h1 span {
+  color: #ec3778;
+}
+
+.indicacao-hero p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #896577;
+}
+
+.indicacao-painel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 35px;
+  background: #fff;
+  border: 1px solid #f7dce7;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(120, 45, 80, 0.06);
+}
+
+.indicacao-cabecalho {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.indicacao-cabecalho svg {
+  color: #ec3778;
+}
+
+.indicacao-cabecalho h2 {
+  font-size: 24px;
+  margin: 12px 0 8px;
+}
+
+.indicacao-cabecalho p {
+  color: #896577;
+  font-size: 14px;
+}
+
+.indicacao-tipos {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.indicacao-tipos button {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #f2cfdd;
+  border-radius: 12px;
+  background: #fff7fa;
+  color: #896577;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.indicacao-tipos button.ativo {
+  background: #ffe3ed;
+  border-color: #ec3778;
+  color: #d93675;
+  font-weight: 600;
+}
+
+.indicacao-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.indicacao-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.indicacao-formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.indicacao-formulario input,
+.indicacao-formulario textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #efd5e0;
+  border-radius: 10px;
+  background: #fffbfc;
+  color: #583047;
+  font: inherit;
+  font-weight: 400;
+  outline: none;
+  transition: 0.2s;
+}
+
+.indicacao-formulario input:focus,
+.indicacao-formulario textarea:focus {
+  border-color: #ec3778;
+  box-shadow: 0 0 0 3px #ffe3ed;
+}
+
+.indicacao-formulario input::placeholder,
+.indicacao-formulario textarea::placeholder {
+  color: #b99aaa;
+}
+
+.indicacao-formulario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.indicacao-enviar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #ec3778;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 5px;
+}
+
+.indicacao-enviar:hover {
+  background: #d52c69;
+  transform: translateY(-2px);
+}
+
+.indicacao-aviso {
+  text-align: center;
+  color: #a08090;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.indicacao-rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 35px;
+  color: #b17b94;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .indicacao-page {
+    padding: 20px 15px;
+  }
+
+  .indicacao-painel {
+    padding: 24px 18px;
+  }
+
+  .indicacao-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .indicacao-tipos {
+    flex-direction: column;
+  }
+
+  .indicacao-cabecalho h2 {
+    font-size: 21px;
+  }
+
+  .indicacao-rodape {
+    font-size: 11px;
+  }
+}
+
+.indicacao-antispam {
+  display: none;
+}
+
+.indicacao-enviar:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.indicacao-feedback {
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  animation: indicacaoAparecer 0.3s ease;
+}
+
+.indicacao-feedback.sucesso {
+  background: #fff0f5;
+  border: 1px solid #f4bfd3;
+  color: #b82c63;
+}
+
+.indicacao-feedback.erro {
+  background: #fff0f0;
+  border: 1px solid #f2b8b8;
+  color: #b83232;
+}
+
+@keyframes indicacaoAparecer {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

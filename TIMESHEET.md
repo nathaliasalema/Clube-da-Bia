@@ -1,14 +1,13 @@
-
 # TIMESHEET (Registro de Horas) — PROJETO SUPERVISIONADO DE EXTENSÃO
+**Aluno:** Nathália Salema Quintanilha  
 
-**Aluno:** Nathália Salema Quintanilha  
 **Projeto:** Clube do Livro da Bia
 
 > Registre as atividades conforme forem realizadas.
+
 > Cada atividade deve ter uma evidência correspondente no índice.
 
 ## Registro de atividades
-
 | Etapa | Data Início | Data Fim | Horas | Atividade realizada | Encontro c/ cliente? | Evidências (link) | Responsável | Comentários |
 |---|---|---|---:|---|:---:|---|---|---|
 | Requisitos | 08/10/2026 | 08/10/2026 | 2 | Encontro com Beatriz Costa e participantes do clube para levantamento das necessidades do site. | S | [Evidência 03 — Encontro com a comunidade](evidencias/encontro-clube-08-10.png) | Nathália Salema Quintanilha | Alinhamento dos objetivos do projeto com a cliente e a comunidade. |
@@ -24,29 +23,30 @@
 | Requisitos | 08/11/2026 | 08/11/2026 | 1 | Reunião com Beatriz Costa e participantes do clube para apresentação do desenvolvimento realizado e discussão dos próximos passos do projeto. Recebimento das informações sobre o livro e a avaliação do mês para atualização posterior da plataforma. | S | [Evidência 10 — Reunião com o clube](evidencias/encontro-clube-08-11.png) | Nathália Salema Quintanilha | Acompanhamento com a cliente e a comunidade, alinhamento das próximas funcionalidades e recebimento de novos dados. |
 | Desenvolvimento | 09/11/2026 | 09/11/2026 | 8 | Implementação da seção de leitura atual na Home, com integração ao Google Sheets via Papa Parse, identificação automática do livro do mês, tratamento de carregamento e erros, inclusão de links para Telegram e Maratona, estilização CSS, ajustes de responsividade e testes visuais. | N | [Evidência 11 — Leitura atual](evidencias/leitura-atual.png) | Nathália Salema Quintanilha | Integração de dados e refinamento da interface inicial. |
 | Desenvolvimento | 09/11/2026 | 09/11/2026 | 3 | Organização e classificação de 45 livros por gênero literário, país de origem, idioma original e gênero do autor. Ampliação da base de dados no Google Sheets e atualização da fórmula FILTER para sincronização automática com a aba Dados do site. | N | [Evidência 12 — Base de dados do Clube em Números](evidencias/base-dados-clube-numeros.png) | Nathália Salema Quintanilha | Preparação dos dados para a página Clube em Números. |
-| Desenvolvimento | 10/11/2026 | 12/11/2026 | 36 | Desenvolvimento da página Clube em Números com React, Recharts e CSS; integração dos dados do Google Sheets; implementação de indicadores, seis gráficos estatísticos, filtros e seção Os queridinhos do clube. Experimentação de diferentes visualizações, ajustes de alinhamento, legibilidade, organização dos cards, rolagem horizontal e responsividade. Comparação da identidade visual das páginas e reformulação do JSX e CSS da página Sobre, incluindo paleta de cores, fundo, títulos, ícones, cards, botões e espaçamentos. Realização de testes e correções visuais no navegador. | N | [Evidência 13 — Dashboard e refinamento visual](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2) | Nathália Salema Quintanilha | Total de 36 horas informado para o período de terça a quinta. Implementação, testes, experimentação e padronização visual registrados no GitHub. |
+| Desenvolvimento | 10/11/2026 | 12/11/2026 | 36 | Desenvolvimento da página Clube em Números com React, Recharts e CSS; integração dos dados do Google Sheets; implementação de indicadores, seis gráficos estatísticos, filtros e seção Os queridinhos do clube. Experimentação de diferentes visualizações, ajustes de alinhamento, legibilidade, organização dos cards, rolagem horizontal e responsividade. Comparação da identidade visual das páginas e reformulação do JSX e CSS da página Sobre, incluindo paleta de cores, fundo, títulos, ícones, cards, botões e espaçamentos. Realização de testes e correções visuais no navegador. | N | [Evidência 13 — Dashboard e refinamento visual](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2) | Nathália Salema Quintanilha | Implementação, testes, experimentação e padronização visual registrados no GitHub. |
 | Planejamento/design e Desenvolvimento | 13/11/2026 | 16/11/2026 | 40 | Planejamento e desenvolvimento da primeira versão da página Prêmios, destinada ao LOTY Awards 2026. Definição das cinco categorias da premiação, regras de participação e fluxo de votação. Estudo e implementação da interface com React, JavaScript e CSS, incluindo identificação dos participantes, seleção de livros por categoria, navegação entre etapas, possibilidade de pular categorias e revisão das escolhas. Integração com o Google Sheets para carregamento automático dos livros de 2026, criação de cards interativos, barra de progresso e estrutura visual da tela de resultados. Ajustes de layout, identidade visual e responsividade. | N | [Evidência 14 — Página Prêmios e LOTY Awards 2026](https://github.com/nathaliasalema/Clube-da-Bia/commit/59a26bd343d62bffad0fa643e844cfe028c32b04) | Nathália Salema Quintanilha | Total de 40 horas informado para o período de sexta a segunda-feira, incluindo planejamento, estudo e desenvolvimento. A interface de votação foi estruturada, mas o registro efetivo dos votos, o controle de duplicidade e a apresentação de resultados reais ainda dependem da integração com o Google Apps Script que será feito posteriormente. |
-| 19/11/2026 | Planejamento e desenvolvimento do sistema de votação anual do LOTY Awards: definição das regras de abertura automática por quantidade de livros, criação da planilha de votos, implementação do backend em Google Apps Script, configuração da API e testes iniciais de funcionamento. | 8h | [Código e documentação — GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/069d3b209e6a8cf0aa61428822a74e7accdafbe2) |
----
+| Desenvolvimento | 19/11/2026 | 19/11/2026 | 8 | Planejamento da votação anual, criação da planilha de votos, implementação e teste inicial da API em Google Apps Script. | N | [Evidência 15 — API LOTY Awards](https://github.com/nathaliasalema/Clube-da-Bia/commit/069d3b209e6a8cf0aa61428822a74e7accdafbe2) | Nathália Salema Quintanilha | API implantada e consulta de 2026 validada; envio de votos e integração ao React pendentes nesta etapa. |
+| Desenvolvimento | 20/11/2026 | 22/11/2026 | 30 | Pesquisa de alternativas para automatização das edições anuais do LOTY Awards, integração entre React, Google Apps Script e Google Sheets, controle de duplicidade, regras de abertura e encerramento, resultados históricos, testes e ajustes visuais. | N | [Evidência 16 — Integração LOTY Awards](https://github.com/nathaliasalema/Clube-da-Bia/commit/66f459480b7ccad4f234c025dcdce5b7767ec4f8) | Nathália Salema Quintanilha | Fluxo completo de votação e resultados validado. |
+| Desenvolvimento | 23/11/2026 | 24/11/2026 | 16 | Desenvolvimento da página Indique um Livro, formulário de livros e temas, integração com menu e rotas, criação de planilha privada, implementação e implantação de API em Google Apps Script, validações, proteção básica contra spam e testes funcionais. | N | [Evidência 17 — Página de indicações](#evidência-17--desenvolvimento-da-página-de-indicações) | Nathália Salema Quintanilha | |
+
+**---**
 
 ## Resumo por etapa
 
 | Etapa | Horas | % do total |
 |---|---:|---:|
 | Prospecção | 0 | 0,00% |
-| Requisitos | 3 | 2,50% |
-| Planejamento/design | 12 | 10,00% |
-| Desenvolvimento | 104,5 | 87,08% |
-| Testes | 0,5 | 0,42% |
+| Requisitos | 3 | 1,72% |
+| Planejamento/design | 12 | 6,90% |
+| Desenvolvimento | 158,5 | 91,09% |
+| Testes | 0,5 | 0,29% |
 | Entrega/implantação | 0 | 0,00% |
-| **TOTAL** | **120** | **100,00%** |
+| **TOTAL** | **174** | **100,00%** |
 
----
+**---**
 
 ## Índice de evidências
-
 ### Evidência 01 — Interface inicial do Clube do Livro da Bia
-
 **Data:** 27/10/2026
 
 **Etapas relacionadas:** Planejamento/design e Desenvolvimento.
@@ -61,10 +61,9 @@ A interface contém cabeçalho com navegação, título de boas-vindas, apresent
 
 ![Página inicial do Clube do Livro da Bia](evidencias/home-clube-bia.png)
 
----
+**---**
 
 ### Evidência 02 — Versionamento do projeto no GitHub
-
 **Data:** 27/10/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -79,10 +78,9 @@ O versionamento foi realizado utilizando Git, com armazenamento do histórico de
 
 [Visualizar commit no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/184c749f90cef6ecaab97df978aef04a41996c7c)
 
----
+**---**
 
 ### Evidência 03 — Encontro com a cliente e a comunidade
-
 **Data:** 08/10/2026
 
 **Etapa relacionada:** Requisitos.
@@ -99,10 +97,9 @@ O encontro contribuiu para aproximar o desenvolvimento da plataforma das necessi
 
 ![Encontro com a comunidade](evidencias/encontro-clube-08-10.png)
 
----
+**---**
 
 ### Evidência 04 — Planilha de livros
-
 **Data:** 28/10/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -123,10 +120,9 @@ A planilha servirá como base para o desenvolvimento da página Nossa Estante, p
 
 ![Planilha de livros](evidencias/planilha.png)
 
----
+**---**
 
 ### Evidência 05 — Estudo dos fundamentos do React
-
 **Data:** 06/11/2026
 
 **Etapa relacionada:** Planejamento/design.
@@ -145,10 +141,9 @@ A atividade teve como objetivo reforçar os conhecimentos necessários para o de
 
 ![Estudo da documentação oficial do React](evidencias/estudo-react-06-11.png)
 
----
+**---**
 
 ### Evidência 06 — Desenvolvimento da página Nossa Estante
-
 **Data:** 06/11/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -175,10 +170,9 @@ Por fim, foram realizados ajustes na estilização dos cards, organização do l
 
 [Visualizar implementação da Nossa Estante no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/0fe07ba50f01ef551d03344210c611e64bb02a89)
 
----
+**---**
 
 ### Evidência 07 — Planejamento das próximas etapas do projeto
-
 **Data:** 06/11/2026
 
 **Etapa relacionada:** Planejamento/design.
@@ -201,10 +195,9 @@ O resultado da atividade foi registrado no arquivo PLANEJAMENTO.md, disponível 
 
 [Visualizar planejamento do projeto](PLANEJAMENTO.md)
 
----
+**---**
 
 ### Evidência 08 — Implementação do menu responsivo
-
 **Data:** 08/11/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -223,10 +216,9 @@ Foram realizados testes de responsividade no navegador, verificando a exibição
 
 ![Menu responsivo do Clube do Livro da Bia](evidencias/menu-responsivo-08-11.png)
 
----
+**---**
 
 ### Evidência 09 — Desenvolvimento e refinamento da página Sobre
-
 **Data:** 08/11/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -249,10 +241,9 @@ Também foi realizada uma tentativa de implementar um carrossel de vídeos. Dura
 
 A tentativa de implementação do carrossel foi mantida como registro do processo de experimentação técnica, embora a funcionalidade não faça parte da versão final dessa etapa.
 
----
+**---**
 
 ### Evidência 10 — Reunião de acompanhamento com a cliente e a comunidade
-
 **Data:** 08/11/2026
 
 **Etapa relacionada:** Requisitos.
@@ -277,10 +268,9 @@ Também foram fornecidas as informações referentes ao livro e à avaliação d
 
 A inclusão do livro e da avaliação do mês na plataforma será realizada em uma atividade posterior.
 
----
+**---**
 
 ### Evidência 11 — Implementação da seção de leitura atual e melhorias na Home
-
 **Data:** 09/11/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -303,10 +293,9 @@ Também foram realizados refinamentos no banner principal da Home, incluindo a r
 
 **Observação:** O título e a capa da leitura atual são obtidos automaticamente da planilha. A automatização do link da leitura coletiva no Maratona será feita em uma próxima etapa.
 
----
+**---**
 
 ### Evidência 12 — Preparação da base de dados para o Clube em Números
-
 **Data:** 09/11/2026
 
 **Etapa relacionada:** Desenvolvimento.
@@ -327,11 +316,9 @@ A estruturação dessas informações permitiu preparar a base para o cálculo d
 
 ![Base de dados do Clube em Números](evidencias/base-dados-clube-numeros.png)
 
-
----
+**---**
 
 ### Evidência 13 — Desenvolvimento do Clube em Números e padronização visual do site
-
 **Período:** 10/11/2026 a 12/11/2026
 
 **Etapa relacionada:** Desenvolvimento, incluindo experimentação, testes e refinamento visual.
@@ -349,10 +336,15 @@ Foram desenvolvidos quatro indicadores principais, apresentando a quantidade de 
 Também foram implementadas seis visualizações estatísticas:
 
 - Distribuição dos livros por gênero literário.
+
 - Média das avaliações por gênero literário.
+
 - Distribuição dos livros conforme o gênero dos autores.
+
 - Países de origem das obras.
+
 - Idiomas originais dos livros.
+
 - Evolução da média das avaliações por ano.
 
 Durante o desenvolvimento, foram realizados ajustes nas dimensões, nas cores, nos rótulos, nos espaçamentos e na organização dos gráficos para melhorar a leitura das informações e manter a identidade visual do site.
@@ -362,13 +354,12 @@ A visualização dos países de origem passou por diferentes tentativas de apres
 Após o desenvolvimento do dashboard, foi realizada uma análise comparativa da identidade visual das páginas Início, Nossa Estante, Clube em Números e Sobre.
 
 Em seguida, foram realizados ajustes no JSX e no CSS da página Sobre.
-Durante esse processo, foram realizados testes visuais no navegador e comparações entre as páginas para avaliar a consistência da interface.
 
+Durante esse processo, foram realizados testes visuais no navegador e comparações entre as páginas para avaliar a consistência da interface.
 
 **Evidência:**
 
 [Visualizar commit do dashboard e dos ajustes visuais no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/3c9a3616b23ad846f6e414afb258951f8cc8fec2)
-
 
 ### Evidência 14 — Desenvolvimento da página Prêmios e estrutura do LOTY Awards 2026
 **Período: 13/11/2026 a 16/11/2026**
@@ -378,6 +369,7 @@ Etapas relacionadas: Planejamento/design e Desenvolvimento, incluindo estudo, ex
 Duração: 40 horas no período.
 
 Descrição:
+
 Planejamento e desenvolvimento da primeira versão da página Prêmios do projeto Clube do Livro da Bia, premiação anual para reconhecer os livros que mais se destacaram entre as leituras realizadas pela comunidade.
 
 A atividade envolveu o estudo e a definição da experiência de participação, incluindo a escolha de cinco categorias: Livro do Ano (LOTY), Pior Livro do Ano, Livro que Mais Emocionou, Maior Plot Twist e Maior Surpresa do Ano.
@@ -385,18 +377,102 @@ A atividade envolveu o estudo e a definição da experiência de participação,
 Foi planejado um sistema de votação organizado em etapas, no qual cada participante informa nome e sobrenome e seleciona um livro por categoria. A interface permite avançar e retornar entre as etapas, deixar categorias sem voto e revisar as escolhas antes da confirmação.
 
 No desenvolvimento da aplicação com React, JavaScript e CSS, foram realizadas as seguintes implementações:
+
 - Criação da página Premios.jsx e do arquivo de estilização Premios.css.
+
 - Inclusão da rota /premios no React Router e atualização do menu de navegação.
+
 - Criação de cards interativos com capas, títulos e autores dos livros.
+
 - Integração com a base de leituras publicada no Google Sheets, utilizando Fetch API e Papa Parse para carregar os livros de 2026.
+
 - Implementação de estados React para controlar identificação, seleção de livros, navegação entre categorias e revisão dos votos.
+
 - Desenvolvimento de barra de progresso e mensagens de orientação ao participante.
+
 - Estruturação da tela de resultados, preparada para apresentar rankings, quantidade de votos e porcentagens por categoria.
+
 - Aplicação da identidade visual do clube, com tons de rosa, ameixa e dourado, além de regras CSS para adaptação a diferentes tamanhos de tela.
+
 A atividade também compreendeu o planejamento das regras para participação, incluindo a proposta de permitir apenas uma votação por nome completo, e a organização da futura integração com Google Apps Script.
 
 Situação da implementação: a interface e o fluxo de seleção foram desenvolvidos. O registro efetivo dos votos, a verificação de duplicidade e a apresentação de resultados reais permanecem pendentes de integração com o sistema de armazenamento.
 
 Evidência:
 
-[Visualizar commit da página Prêmios e do LOTY Awards no GitHub] https://github.com/nathaliasalema/Clube-da-Bia/commit/59a26bd343d62bffad0fa643e844cfe028c32b04#diff-4380f23945d2ff7ea89e5fe50c4c127e1cb259cc731e5bc8c4e77b11d559deec
+[Visualizar commit da página Prêmios e do LOTY Awards no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/59a26bd343d62bffad0fa643e844cfe028c32b04#diff-4380f23945d2ff7ea89e5fe50c4c127e1cb259cc731e5bc8c4e77b11d559deec)
+
+
+---
+
+### Evidência 15 — Desenvolvimento da API do LOTY Awards
+
+**Data:** 19/11/2026
+
+**Etapa relacionada:** Desenvolvimento.
+
+**Duração:** 8 horas.
+
+**Descrição:**
+
+Planejamento do sistema de votação anual, definição das regras de abertura automática conforme a quantidade de livros e criação da planilha destinada ao armazenamento dos votos e das edições.
+
+Implementação do backend em Google Apps Script, configuração da API como aplicativo da Web e testes iniciais de consulta da edição de 2026. Nesta etapa, o envio de votos e a integração com a interface React ainda estavam pendentes.
+
+**Link do commit:**
+
+[Visualizar implementação inicial da API no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/069d3b209e6a8cf0aa61428822a74e7accdafbe2)
+
+---
+
+### Evidência 16 — Integração da votação anual e dos resultados do LOTY Awards
+
+**Período:** 20/11/2026 a 22/11/2026
+
+**Etapa relacionada:** Desenvolvimento, incluindo pesquisa, experimentação e testes.
+
+**Duração:** 30 horas no período.
+
+**Descrição:**
+
+Pesquisa de alternativas técnicas para permitir a realização da premiação em diferentes anos, sem necessidade de recriar manualmente a página a cada edição.
+
+Integração do formulário React com a API em Google Apps Script e a planilha de votos, incluindo validação dos dados e controle de duplicidade por nome completo e edição.
+
+Implementação das regras de abertura após o registro de 12 livros distintos e encerramento em 10 de janeiro do ano seguinte, preservando a consulta aos resultados históricos. Desenvolvimento da seleção de edições e da atualização automática dos resultados a cada 30 segundos.
+
+Realização de testes de ponta a ponta, com envio de voto fictício nas cinco categorias, conferência do registro na planilha e verificação dos resultados e porcentagens. O registro de teste foi removido após a validação.
+
+Foram realizados ajustes visuais na seleção de edições, nos espaçamentos dos cards e nas mensagens de atualização dos resultados.
+
+**Link do commit:**
+
+[Visualizar integração da votação e resultados no GitHub](https://github.com/nathaliasalema/Clube-da-Bia/commit/66f459480b7ccad4f234c025dcdce5b7767ec4f8)
+
+---
+
+### Evidência 17 — Desenvolvimento da página de indicações
+
+**Data:** 23/11/2026 a 24/11/2026
+
+**Etapa relacionada:** Desenvolvimento, incluindo implementação, integração e testes.
+
+**Duração:** 16 horas.
+
+**Descrição:**
+
+Desenvolvimento da página Indique um Livro, destinada ao recebimento de recomendações de livros e sugestões de temas para as próximas leituras do Clube do Livro da Bia, aberta à participação de qualquer visitante, sem exigência de senha.
+
+A implementação envolveu:
+
+- Criação dos arquivos `Indicacao.jsx` e `Indicacao.css`, configuração da rota `/indicacao` e inclusão da página no menu de navegação.
+- Desenvolvimento de formulário com alternância entre livros e temas, identificação do participante e campo opcional para justificativa.
+- Aplicação da identidade visual do clube e regras CSS de responsividade.
+- Criação de planilha privada no Google Sheets, com registro de data e hora, identificação, modalidade e informações da indicação.
+- Desenvolvimento e implantação de API em Google Apps Script, com validação de campos obrigatórios, limites de caracteres, tratamento de erros, proteção contra fórmulas e controle de concorrência na gravação.
+- Integração do formulário com a API por meio de Fetch API e requisições POST, com bloqueio temporário do botão durante o envio, mensagens de retorno e limpeza do formulário após confirmação.
+- Implementação de campo invisível como proteção básica contra spam automatizado, sem impedir completamente envios abusivos.
+
+Foram realizados testes de envio de uma indicação de livro e de uma sugestão de tema, com confirmação do registro de ambas na planilha, preenchimento adequado das colunas e funcionamento do motivo opcional. A página passou a integrar as seis páginas principais do projeto.
+
+**Evidência:**
